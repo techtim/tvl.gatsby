@@ -13,6 +13,7 @@
     "gatsby-plugin-google-analytics": "^1.0.29",
     "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-sharp": "^1.6.42",
     "gatsby-remark-copy-linked-files": "^1.5.31",
     "gatsby-remark-images": "^1.5.61",
@@ -23,6 +24,7 @@
     "gatsby-transformer-remark": "^1.7.40",
     "gatsby-transformer-sharp": "^1.6.22",
     "lodash": "^4.17.5",
+    "react-media": "^1.8.0",
     "rebass": "^2.0.0-0",
     "serve": "^6.5.5"
   },
