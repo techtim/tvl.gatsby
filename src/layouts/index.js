@@ -21,9 +21,7 @@ const Template = ({ children }) => (
   <Provider theme={theme}>
     <Box width="100%">
       <Header />
-      <Box pt={112} px={[4, 5]}>
-        {children()}
-      </Box>
+      <Box pt={112}>{children()}</Box>
     </Box>
   </Provider>
 )

@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
+import { Image, Box } from 'rebass'
 
 const Index = ({
   data: {
@@ -12,37 +13,24 @@ const Index = ({
     },
   },
 }) => (
-  <div>
+  <Box px={[0, 5]}>
     <Helmet title={title} />
-    {projects.map(({ node }) => {
+
+    {/* TODO: site hero */}
+    {projects.concat(soft).map(({ node }) => {
       const title = get(node, 'frontmatter.title') || node.fields.slug
+
       return (
-        <div key={node.fields.slug}>
-          <h3>
-            <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-              {title}
-            </Link>
-          </h3>
-          <small>{node.frontmatter.date}</small>
-          <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-        </div>
+        <Link
+          style={{ boxShadow: 'none' }}
+          to={node.fields.slug}
+          key={node.fields.slug}
+        >
+          <Image src={node.frontmatter.hero.publicURL} alt={title} />
+        </Link>
       )
     })}
-    {soft.map(({ node }) => {
-      const title = get(node, 'frontmatter.title') || node.fields.slug
-      return (
-        <div key={node.fields.slug}>
-          <h3>
-            <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-              {title}
-            </Link>
-          </h3>
-          <small>{node.frontmatter.date}</small>
-          <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-        </div>
-      )
-    })}
-  </div>
+  </Box>
 )
 
 export default Index
@@ -60,13 +48,15 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            hero {
+              publicURL
+            }
           }
         }
       }
@@ -77,13 +67,15 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
           fields {
             slug
           }
           frontmatter {
             date(formatString: "DD MMMM, YYYY")
             title
+            hero {
+              publicURL
+            }
           }
         }
       }

@@ -2,6 +2,7 @@
 date: 2018-04-15
 title: First Project
 place: Moscow, Russia
+hero: './brave-title.jpg'
 ---
 
 The name Australia (pronounced [əˈstɹæɪljə, -liə] in Australian English[18]) is derived from the Latin Terra Australis ("southern land"), a name used for a hypothetical continent in the Southern Hemisphere since ancient times.[19] When Europeans first began visiting and mapping Australia in the 17th century, the name Terra Australis was naturally applied to the new territories.[N 4]

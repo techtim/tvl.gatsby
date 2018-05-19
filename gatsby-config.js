@@ -5,7 +5,6 @@ module.exports = {
     description: 'TVL website',
     siteUrl: 'https://tvl.io',
   },
-  pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
