@@ -36,6 +36,11 @@ const links = [
   /* TODO: social */
 ]
 
+const Background = styled(({ isOpened, ...props }) => <div {...props} />)`
+  background: ${({ theme, isOpened }) =>
+    isOpened ? theme.gradients.main : theme.colors.white};
+`
+
 export default class Header extends React.Component {
   constructor(props) {
     super(props)
@@ -55,13 +60,7 @@ export default class Header extends React.Component {
         {mobile =>
           mobile ? (
             <Fixed left={0} top={0} right={0} style={{ background: 'white' }}>
-              <Box
-                style={{
-                  background: isOpened
-                    ? 'linear-gradient(180deg, rgba(133, 202, 213, 0.4788) 15.47%, rgba(241, 123, 171, 0.2964) 58.01%, rgba(251, 225, 49, 0.2565) 97.79%)'
-                    : 'white',
-                }}
-              >
+              <Background isOpened={isOpened}>
                 <Flex
                   justify="space-between"
                   align="center"
@@ -89,13 +88,15 @@ export default class Header extends React.Component {
                     ))}
                   </Menu>
                 ) : null}
-              </Box>
+              </Background>
             </Fixed>
           ) : (
             <Flex align="baseline" px={5} py={4}>
-              <Link to="/">
-                <Image src={logo} width={160} height={67} />
-              </Link>
+              <Box mr={6}>
+                <Link to="/">
+                  <Image src={logo} width={160} height={67} />
+                </Link>
+              </Box>
               {links.map((link, i) => (
                 <Box mx={4} key={i}>
                   {link}
