@@ -43,6 +43,7 @@ module.exports = {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
+    'gatsby-plugin-typescript',
     'gatsby-plugin-react-next',
     'gatsby-plugin-feed',
     'gatsby-plugin-offline',

@@ -17,7 +17,9 @@ injectGlobal`
   }
 `
 
-const Template = ({ children }) => (
+const Template: React.SFC<{ children: () => React.ReactNode }> = ({
+  children,
+}) => (
   <Provider theme={theme}>
     <Box width="100%">
       <Header />

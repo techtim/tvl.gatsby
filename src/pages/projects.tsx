@@ -3,7 +3,13 @@ import get from 'lodash/get'
 import Link from 'gatsby-link'
 import { Image } from 'rebass'
 
-const Soft = ({
+interface Props {
+  data: {
+    allMarkdownRemark: { edges: any[] }
+  }
+}
+
+const Projects: React.SFC<Props> = ({
   data: {
     allMarkdownRemark: { edges: projects },
   },
@@ -25,13 +31,13 @@ const Soft = ({
   </div>
 )
 
-export default Soft
+export default Projects
 
-export const query = graphql`
-  query SoftQuery {
+export const pageQuery = graphql`
+  query ProjectsQuery {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/soft/" } }
+      filter: { fileAbsolutePath: { regex: "/projects/" } }
     ) {
       edges {
         node {

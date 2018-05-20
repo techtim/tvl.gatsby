@@ -27,19 +27,25 @@ const NavLink = styled(Link)`
   }
 `
 
-const links = {
+const links: { [index: string]: string } = {
   Projects: '/projects',
   Soft: '/soft',
   About: '/about',
   Contact: '/contact',
 }
 
-const Background = styled(({ isOpened, ...props }) => <div {...props} />)`
+interface BackgroundProps {
+  isOpened: boolean
+}
+
+const Background = styled(({ isOpened: _, ...props }: BackgroundProps) => (
+  <div {...props} />
+))`
   background: ${({ theme, isOpened }) =>
     isOpened ? theme.gradients.main : theme.colors.white};
 `
 
-const Section = ({ section }) => (
+const Section: React.SFC<{ section: string }> = ({ section }) => (
   <Text fontSize={3}>
     <NavLink to={links[section]} activeClassName={activeClassName}>
       {section}
@@ -47,9 +53,13 @@ const Section = ({ section }) => (
   </Text>
 )
 
-export default class Header extends React.Component {
+interface State {
+  isOpened: boolean
+}
+
+export default class Header extends React.Component<{}, State> {
   // TODO: destroy with `this.state` in TypeScript 😠
-  constructor(props) {
+  constructor(props: {}) {
     super(props)
 
     this.state = { isOpened: false }
@@ -64,7 +74,7 @@ export default class Header extends React.Component {
 
     return (
       <Media query={{ maxWidth: 768 }}>
-        {mobile =>
+        {(mobile: boolean) =>
           mobile ? (
             <Fixed left={0} top={0} right={0} style={{ background: 'white' }}>
               <Background isOpened={isOpened}>

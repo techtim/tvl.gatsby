@@ -4,7 +4,15 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import { Image, Box } from 'rebass'
 
-const Index = ({
+interface Props {
+  data: {
+    projects: { edges: any[] }
+    soft: { edges: any[] }
+    site: { siteMetadata: { title: string } }
+  }
+}
+
+const Index: React.SFC<Props> = ({
   data: {
     projects: { edges: projects },
     soft: { edges: soft },
