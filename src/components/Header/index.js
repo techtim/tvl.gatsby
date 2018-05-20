@@ -2,6 +2,7 @@ import React from 'react'
 import { Flex, Box, Image, Fixed, Text } from 'rebass'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import { themeGet } from 'styled-system'
 import Media from 'react-media'
 
 import logo from './tvl-top-logo.png'
@@ -13,35 +14,41 @@ const Menu = Flex.extend`
   background-color: transparent;
 `
 
+const activeClassName = 'active-gatsby-nav-link'
+
 const NavLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  text-underline-position: under;
+  color: ${themeGet('colors.black', 'black')};
   text-transform: uppercase;
+
+  &.${activeClassName} {
+    text-decoration: underline;
+  }
 `
 
-const links = [
-  <NavLink to="/projects" key="projects">
-    <Text fontSize={3}>Projects</Text>
-  </NavLink>,
-  <NavLink to="/soft" key="soft">
-    <Text fontSize={3}>Soft</Text>
-  </NavLink>,
-  <NavLink to="/about" key="about">
-    <Text fontSize={3}>About</Text>
-  </NavLink>,
-  <NavLink to="/contact" key="contact">
-    <Text fontSize={3}>Contact</Text>
-  </NavLink>,
-  /* TODO: search */
-  /* TODO: social */
-]
+const links = {
+  Projects: '/projects',
+  Soft: '/soft',
+  About: '/about',
+  Contact: '/contact',
+}
 
 const Background = styled(({ isOpened, ...props }) => <div {...props} />)`
   background: ${({ theme, isOpened }) =>
     isOpened ? theme.gradients.main : theme.colors.white};
 `
 
+const Section = ({ section }) => (
+  <Text fontSize={3}>
+    <NavLink to={links[section]} activeClassName={activeClassName}>
+      {section}
+    </NavLink>
+  </Text>
+)
+
 export default class Header extends React.Component {
+  // TODO: destroy with `this.state` in TypeScript 😠
   constructor(props) {
     super(props)
 
@@ -81,9 +88,9 @@ export default class Header extends React.Component {
                 </Flex>
                 {isOpened ? (
                   <Menu px={4} py={0} flexDirection="column">
-                    {links.map((link, i) => (
-                      <Box py={4} key={i}>
-                        {React.cloneElement(link, { onClick: this.onToggle })}
+                    {Object.keys(links).map(section => (
+                      <Box py={4} key={section}>
+                        <Section section={section} />
                       </Box>
                     ))}
                   </Menu>
@@ -97,9 +104,9 @@ export default class Header extends React.Component {
                   <Image src={logo} width={160} height={67} />
                 </Link>
               </Box>
-              {links.map((link, i) => (
-                <Box mx={4} key={i}>
-                  {link}
+              {Object.keys(links).map(section => (
+                <Box mx={4} key={section}>
+                  <Section section={section} />
                 </Box>
               ))}
             </Flex>

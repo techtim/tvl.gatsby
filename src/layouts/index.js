@@ -1,14 +1,14 @@
 import React from 'react'
 import { Box } from 'rebass'
 import { injectGlobal } from 'styled-components'
-import { Provider } from 'rebass'
-import theme from '../utils/theme'
+import { Provider, Container } from 'rebass'
+import theme from '../theme'
 import Header from '../components/Header'
+import 'typeface-maven-pro'
+import 'typeface-fira-mono'
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Fira+Mono|Maven+Pro:400,500');
-
-  body {
+  body, p {
     margin: 0;
   }
 
@@ -21,7 +21,9 @@ const Template = ({ children }) => (
   <Provider theme={theme}>
     <Box width="100%">
       <Header />
-      <Box pt={112}>{children()}</Box>
+      <Container pt={112} px={0}>
+        {children()}
+      </Container>
     </Box>
   </Provider>
 )

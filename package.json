@@ -26,7 +26,9 @@
     "lodash": "^4.17.5",
     "react-media": "^1.8.0",
     "rebass": "^2.0.0-0",
-    "serve": "^6.5.5"
+    "serve": "^6.5.5",
+    "typeface-fira-mono": "^0.0.54",
+    "typeface-maven-pro": "^0.0.54"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",

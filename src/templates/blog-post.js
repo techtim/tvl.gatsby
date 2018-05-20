@@ -1,31 +1,47 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import { Heading, Box, Image } from 'rebass'
+import { Heading, Box, Image, Text } from 'rebass'
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const {
+const BlogPostTemplate = ({
+  data: {
+    markdownRemark: {
+      html,
       frontmatter: { title, hero, place, date },
-    } = post
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    },
+    site: {
+      siteMetadata: { title: siteTitle },
+    },
+  },
+}) => {
+  return (
+    <Box>
+      <Helmet title={`${title} | ${siteTitle}`} />
 
-    return (
-      <Box>
-        {hero ? <Image src={hero.publicURL} /> : null}
-        <Box pt={3} px={[4, 5]}>
-          <Helmet title={`${title} | ${siteTitle}`} />
-          <Heading fontSize={4} style={{ textTransform: 'lowercase' }}>
-            {title}
-          </Heading>
-          <p>{date}</p>
-          {place ? <p>{place}</p> : null}
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </Box>
+      {hero ? <Image src={hero.publicURL} width="100%" /> : null}
+
+      <Box pt={3} px={[4, 5]}>
+        <Heading
+          fontSize={4}
+          fontWeight="regular"
+          style={{ textTransform: 'lowercase' }}
+        >
+          {title}
+        </Heading>
+
+        <Text is="div" color="suvaGray" mt={1}>
+          {date}
+          {place ? `, ${place}` : null}
+        </Text>
+
+        <Text
+          color="suvaGray"
+          is="div"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </Box>
-    )
-  }
+    </Box>
+  )
 }
 
 export default BlogPostTemplate
@@ -38,7 +54,6 @@ export const pageQuery = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
       html
       frontmatter {
         title
