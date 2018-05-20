@@ -1,13 +1,12 @@
-import React from 'react'
-import { Flex, Box, Image, Fixed, Text } from 'rebass'
 import Link from 'gatsby-link'
+import React from 'react'
+import Media from 'react-media'
+import { Box, Fixed, Flex, Image, Text } from 'rebass'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
-import Media from 'react-media'
-
-import logo from './tvl-top-logo.png'
 import burger from './burger.svg'
 import cross from './cross.svg'
+import logo from './tvl-top-logo.png'
 
 const Menu = Flex.extend`
   min-height: 100vh;

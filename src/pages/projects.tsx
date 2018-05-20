@@ -1,6 +1,6 @@
-import React from 'react'
-import get from 'lodash/get'
 import Link from 'gatsby-link'
+import get from 'lodash/get'
+import React from 'react'
 import { Image } from 'rebass'
 
 interface Props {

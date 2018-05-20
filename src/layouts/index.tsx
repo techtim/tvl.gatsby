@@ -1,11 +1,10 @@
 import React from 'react'
-import { Box } from 'rebass'
+import { Box, Container, Provider } from 'rebass'
 import { injectGlobal } from 'styled-components'
-import { Provider, Container } from 'rebass'
-import theme from '../theme'
-import Header from '../components/Header'
-import 'typeface-maven-pro'
 import 'typeface-fira-mono'
+import 'typeface-maven-pro'
+import Header from '../components/Header'
+import theme from '../theme'
 
 injectGlobal`
   body, p {

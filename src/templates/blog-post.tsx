@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Heading, Box, Image, Text } from 'rebass'
+import { Box, Heading, Image, Text } from 'rebass'
 
 interface Props {
   data: {

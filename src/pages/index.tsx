@@ -1,8 +1,8 @@
-import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import React from 'react'
 import Helmet from 'react-helmet'
-import { Image, Box } from 'rebass'
+import { Box, Image } from 'rebass'
 
 interface Props {
   data: {
@@ -26,7 +26,7 @@ const Index: React.SFC<Props> = ({
 
     {/* TODO: site hero */}
     {projects.concat(soft).map(({ node }) => {
-      const title = get(node, 'frontmatter.title') || node.fields.slug
+      const postTitle = get(node, 'frontmatter.title') || node.fields.slug
 
       return (
         <Link
@@ -34,7 +34,7 @@ const Index: React.SFC<Props> = ({
           to={node.fields.slug}
           key={node.fields.slug}
         >
-          <Image src={node.frontmatter.hero.publicURL} alt={title} />
+          <Image src={node.frontmatter.hero.publicURL} alt={postTitle} />
         </Link>
       )
     })}
