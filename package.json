@@ -30,7 +30,7 @@
     "react-helmet": "^5.2.0",
     "react-media": "^1.8.0",
     "rebass": "^2.0.0-0",
-    "serve": "^6.5.5",
+    "serve": "^10.0.0",
     "typeface-fira-mono": "^0.0.54",
     "typeface-maven-pro": "^0.0.54"
   },
