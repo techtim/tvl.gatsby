@@ -1,8 +1,10 @@
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Box } from 'rebass'
 import Card from '../components/Card'
+import Layout from './../components/Layout'
 
 interface Props {
   data: {
@@ -21,28 +23,30 @@ const Index: React.SFC<Props> = ({
     },
   },
 }) => (
-  <Box mx={[0, 0, 4, 5]}>
-    <Helmet title={title} />
+  <Layout>
+    <Box mx={[0, 0, 4, 5]}>
+      <Helmet title={title} />
 
-    {/* TODO: site hero */}
+      {/* TODO: site hero */}
 
-    {projects
-      .concat(soft)
-      .map(({ node }) => (
-        <Card
-          to={node.fields.slug}
-          key={node.fields.slug}
-          title={get(node, 'frontmatter.title') || node.fields.slug}
-          image={get(node, 'frontmatter.hero.publicURL') || ''}
-        />
-      ))}
-  </Box>
+      {projects
+        .concat(soft)
+        .map(({ node }) => (
+          <Card
+            to={node.fields.slug}
+            key={node.fields.slug}
+            title={get(node, 'frontmatter.title') || node.fields.slug}
+            image={get(node, 'frontmatter.hero.publicURL') || ''}
+          />
+        ))}
+    </Box>
+  </Layout>
 )
 
 export default Index
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  {
     site {
       siteMetadata {
         title
@@ -58,7 +62,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date
             title
             hero {
               publicURL
@@ -77,7 +81,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date
             title
             hero {
               publicURL

@@ -11,7 +11,8 @@ const colors = {
 
   // text
   suvaGray: '#8a8484',
-  gray: '#828282', // skeletons silver: '#c4c4c4',
+  gray: '#828282',
+  // skeletons silver: '#c4c4c4',
   suvaGrey2: '#8c8989',
 
   // colors
@@ -24,7 +25,7 @@ const colors = {
 
 export default {
   fonts: {
-    sans: '"Maven Pro", Helvetica Neue, sans-serif',
+    sans: '"Maven Pro", sans-serif',
     mono: '"Fira Mono", monospace',
   },
 

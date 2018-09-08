@@ -1,6 +1,8 @@
+import { graphql } from 'gatsby'
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Box, Heading, Image, Text } from 'rebass'
+import Layout from '../components/Layout'
 
 interface Props {
   data: {
@@ -25,7 +27,7 @@ const BlogPostTemplate: React.SFC<Props> = ({
     },
   },
 }) => (
-  <Box>
+  <Layout>
     <Helmet title={`${title} | ${siteTitle}`} />
 
     {hero ? <Image src={hero.publicURL} width="100%" /> : null}
@@ -50,13 +52,13 @@ const BlogPostTemplate: React.SFC<Props> = ({
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </Box>
-  </Box>
+  </Layout>
 )
 
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query($slug: String!) {
     site {
       siteMetadata {
         title
@@ -67,7 +69,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         place
-        date(formatString: "MMMM DD, YYYY")
+        date
         hero {
           publicURL
         }

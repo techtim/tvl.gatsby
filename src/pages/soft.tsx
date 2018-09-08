@@ -1,6 +1,8 @@
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import React from 'react'
 import Card from '../components/Card'
+import Layout from '../components/Layout'
 
 interface Props {
   data: {
@@ -13,7 +15,7 @@ const Soft: React.SFC<Props> = ({
     allMarkdownRemark: { edges: projects },
   },
 }) => (
-  <div>
+  <Layout>
     {projects.map(({ node }) => {
       const title = get(node, 'frontmatter.title') || node.fields.slug
 
@@ -26,13 +28,13 @@ const Soft: React.SFC<Props> = ({
         />
       )
     })}
-  </div>
+  </Layout>
 )
 
 export default Soft
 
 export const query = graphql`
-  query SoftQuery {
+  {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { fileAbsolutePath: { regex: "/soft/" } }
@@ -44,7 +46,7 @@ export const query = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date
             title
             hero {
               publicURL

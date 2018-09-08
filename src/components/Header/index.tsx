@@ -1,7 +1,7 @@
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import React from 'react'
 import Media from 'react-media'
-import { Box, Fixed, Flex, Image, Text } from 'rebass'
+import { Box, Fixed, Flex, Image, Text, theme } from 'rebass'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
 import burger from './burger.svg'
@@ -15,7 +15,9 @@ const Menu = Flex.extend`
 
 const activeClassName = 'active-gatsby-nav-link'
 
-const NavLink = styled(Link)`
+const NavLink = styled(Link).attrs({
+  activeClassName,
+})`
   text-decoration: none;
   text-underline-position: under;
   color: ${themeGet('colors.black', 'black')};
@@ -37,18 +39,18 @@ interface BackgroundProps {
   isOpened: boolean
 }
 
-const Background = styled(({ isOpened: _, ...props }: BackgroundProps) => (
-  <div {...props} />
-))`
-  background: ${({ theme, isOpened }) =>
-    isOpened ? theme.gradients.main : theme.colors.white};
+// using background-image or background hence separate component and not Box
+const Background =
+  styled.div <
+  BackgroundProps >
+  `
+  background: ${({ isOpened }) =>
+    themeGet(isOpened ? 'gradients.main' : 'colors.white', 'white')};
 `
 
 const Section: React.SFC<{ section: string }> = ({ section }) => (
   <Text fontSize={3}>
-    <NavLink to={links[section]} activeClassName={activeClassName}>
-      {section}
-    </NavLink>
+    <NavLink to={links[section]}>{section}</NavLink>
   </Text>
 )
 
@@ -57,12 +59,7 @@ interface State {
 }
 
 export default class Header extends React.Component<{}, State> {
-  // TODO: destroy with `this.state` in TypeScript 😠
-  constructor(props: {}) {
-    super(props)
-
-    this.state = { isOpened: false }
-  }
+  state: State = { isOpened: false }
 
   onToggle = () => {
     this.setState(state => ({ isOpened: !state.isOpened }))
@@ -72,7 +69,7 @@ export default class Header extends React.Component<{}, State> {
     const { isOpened } = this.state
 
     return (
-      <Media query={{ maxWidth: 768 }}>
+      <Media query={{ maxWidth: theme.breakpoints[1] }}>
         {(mobile: boolean) =>
           mobile ? (
             <Fixed left={0} top={0} right={0} style={{ background: 'white' }}>

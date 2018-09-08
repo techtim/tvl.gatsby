@@ -16,16 +16,14 @@ injectGlobal`
   }
 `
 
-const Template: React.SFC<{ children: () => React.ReactNode }> = ({
-  children,
-}) => (
+const Layout: React.SFC = ({ children }) => (
   <Provider theme={theme}>
     <Box width="100%">
       <Header />
       <Container pt={112} px={0}>
-        {children()}
+        {children}
       </Container>
     </Box>
   </Provider>
 )
-export default Template
+export default Layout
