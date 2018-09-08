@@ -1,11 +1,15 @@
 import React from 'react'
-import { Heading } from 'rebass'
+import { Heading, Lead, Text } from 'rebass'
+import ContactForm from '../components/ContactForm'
+import Layout from '../components/Layout'
 
 const Contacts: React.SFC = () => (
-  <div>
+  <Layout>
+    <Lead>ready to make something amazing?</Lead>
     <Heading>Contact</Heading>
-    <a href="mailto:timvisuals@gmail.com">timvisuals@gmail.com</a>
-  </div>
+    <Text>timvisuals@gmail.com</Text>
+    <ContactForm />
+  </Layout>
 )
 
 export default Contacts
