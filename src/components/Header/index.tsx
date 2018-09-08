@@ -49,9 +49,11 @@ const Background =
 `
 
 const Section: React.SFC<{ section: string }> = ({ section }) => (
-  <Text fontSize={3}>
-    <NavLink to={links[section]}>{section}</NavLink>
-  </Text>
+  <Flex justifyContent="center">
+    <Text fontSize={3}>
+      <NavLink to={links[section]}>{section}</NavLink>
+    </Text>
+  </Flex>
 )
 
 interface State {
