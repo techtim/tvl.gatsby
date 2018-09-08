@@ -21,23 +21,21 @@ const Index: React.SFC<Props> = ({
     },
   },
 }) => (
-  <Box px={[0, 5]}>
+  <Box mx={[0, 0, 4, 5]}>
     <Helmet title={title} />
 
     {/* TODO: site hero */}
 
-    {projects.concat(soft).map(({ node }) => {
-      const postTitle = get(node, 'frontmatter.title') || node.fields.slug
-
-      return (
+    {projects
+      .concat(soft)
+      .map(({ node }) => (
         <Card
           to={node.fields.slug}
           key={node.fields.slug}
-          title={postTitle}
-          image={node.frontmatter.hero.publicURL}
+          title={get(node, 'frontmatter.title') || node.fields.slug}
+          image={get(node, 'frontmatter.hero.publicURL') || ''}
         />
-      )
-    })}
+      ))}
   </Box>
 )
 

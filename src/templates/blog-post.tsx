@@ -30,7 +30,7 @@ const BlogPostTemplate: React.SFC<Props> = ({
 
     {hero ? <Image src={hero.publicURL} width="100%" /> : null}
 
-    <Box pt={3} px={[4, 5]}>
+    <Box pt={3} px={[0, 5]}>
       <Heading
         fontSize={4}
         fontWeight="regular"
