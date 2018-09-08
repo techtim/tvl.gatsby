@@ -8,7 +8,7 @@ import burger from './burger.svg'
 import cross from './cross.svg'
 import logo from './tvl-top-logo.png'
 
-const Menu = Flex.extend`
+const Menu = styled(Flex).attrs({ is: 'nav' })`
   min-height: 100vh;
   background-color: transparent;
 `
@@ -71,56 +71,58 @@ export default class Header extends React.Component<{}, State> {
     const { isOpened } = this.state
 
     return (
-      <Media query={{ maxWidth: theme.breakpoints[1] }}>
-        {(mobile: boolean) =>
-          mobile ? (
-            <Fixed left={0} top={0} right={0} style={{ background: 'white' }}>
-              <Background isOpened={isOpened}>
-                <Flex
-                  justify="space-between"
-                  align="center"
-                  style={{
-                    height: 112,
-                  }}
-                  px={4}
-                >
-                  <Link
-                    to="/"
-                    onClick={() => this.setState({ isOpened: false })}
+      <header>
+        <Media query={{ maxWidth: theme.breakpoints[1] }}>
+          {(mobile: boolean) =>
+            mobile ? (
+              <Fixed left={0} top={0} right={0} style={{ background: 'white' }}>
+                <Background isOpened={isOpened}>
+                  <Flex
+                    justify="space-between"
+                    align="center"
+                    style={{
+                      height: 112,
+                    }}
+                    px={4}
                   >
-                    <Image src={logo} width={108} />
+                    <Link
+                      to="/"
+                      onClick={() => this.setState({ isOpened: false })}
+                    >
+                      <Image src={logo} width={108} />
+                    </Link>
+                    <Box onClick={this.onToggle}>
+                      <Image src={isOpened ? cross : burger} />
+                    </Box>
+                  </Flex>
+                  {isOpened ? (
+                    <Menu px={4} py={0} flexDirection="column">
+                      {Object.keys(links).map(section => (
+                        <Box py={4} key={section}>
+                          <Section section={section} />
+                        </Box>
+                      ))}
+                    </Menu>
+                  ) : null}
+                </Background>
+              </Fixed>
+            ) : (
+              <Flex align="baseline" px={5} py={4} is="nav">
+                <Box mr={6}>
+                  <Link to="/">
+                    <Image src={logo} width={160} height={67} />
                   </Link>
-                  <Box onClick={this.onToggle}>
-                    <Image src={isOpened ? cross : burger} />
-                  </Box>
-                </Flex>
-                {isOpened ? (
-                  <Menu px={4} py={0} flexDirection="column">
-                    {Object.keys(links).map(section => (
-                      <Box py={4} key={section}>
-                        <Section section={section} />
-                      </Box>
-                    ))}
-                  </Menu>
-                ) : null}
-              </Background>
-            </Fixed>
-          ) : (
-            <Flex align="baseline" px={5} py={4}>
-              <Box mr={6}>
-                <Link to="/">
-                  <Image src={logo} width={160} height={67} />
-                </Link>
-              </Box>
-              {Object.keys(links).map(section => (
-                <Box mx={4} key={section}>
-                  <Section section={section} />
                 </Box>
-              ))}
-            </Flex>
-          )
-        }
-      </Media>
+                {Object.keys(links).map(section => (
+                  <Box mx={4} key={section}>
+                    <Section section={section} />
+                  </Box>
+                ))}
+              </Flex>
+            )
+          }
+        </Media>
+      </header>
     )
   }
 }

@@ -32,14 +32,16 @@ const BlogPostTemplate: React.SFC<Props> = ({
 
     {hero ? <Image src={hero.publicURL} width="100%" /> : null}
 
-    <Box pt={3} px={[0, 5]}>
-      <Heading
-        fontSize={4}
-        fontWeight="regular"
-        style={{ textTransform: 'lowercase' }}
-      >
-        {title}
-      </Heading>
+    <Box pt={3} px={[0, 5]} is="article">
+      <header>
+        <Heading
+          fontSize={4}
+          fontWeight="regular"
+          style={{ textTransform: 'lowercase' }}
+        >
+          {title}
+        </Heading>
+      </header>
 
       <Text is="div" color="suvaGray" mt={1}>
         {date}
