@@ -7,6 +7,7 @@
     "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^1.6.4",
     "formik": "^1.2.0",
     "gatsby": "^2.0.0-rc.14",
     "gatsby-plugin-feed": "^2.0.0-rc.2",
@@ -14,6 +15,7 @@
     "gatsby-plugin-offline": "^2.0.0-rc.5",
     "gatsby-plugin-react-helmet": "^3.0.0-rc.1",
     "gatsby-plugin-sharp": "^2.0.0-rc.3",
+    "gatsby-plugin-styled-components": "^3.0.0-rc.1",
     "gatsby-plugin-typescript": "^2.0.0-rc.4",
     "gatsby-remark-copy-linked-files": "^2.0.0-rc.1",
     "gatsby-remark-images": "^2.0.1-rc.1",
@@ -29,8 +31,10 @@
     "react-dom": "^16.5.0",
     "react-helmet": "^5.2.0",
     "react-media": "^1.8.0",
-    "rebass": "^2.0.0-0",
+    "rebass": "^2.3.2",
     "serve": "^10.0.0",
+    "styled-components": "^3.4.5",
+    "styled-system": "^3.0.3",
     "typeface-fira-mono": "^0.0.54",
     "typeface-maven-pro": "^0.0.54"
   },

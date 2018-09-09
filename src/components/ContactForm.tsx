@@ -1,14 +1,7 @@
 import React from 'react'
-import { Field, Form, Formik, FieldProps } from 'formik'
-import styled from 'styled-components'
-import {
-  Text,
-  Textarea as _Textarea,
-  Input as _Input,
-  Flex,
-  Box,
-  Button,
-} from 'rebass'
+import { Field, Form, Formik } from 'formik'
+import { Textarea as _Textarea, Input as _Input, Flex, Box } from 'rebass'
+import { Submit, Textarea, RebassField } from './Inputs'
 
 interface FormFields {
   name: string
@@ -21,48 +14,6 @@ interface State {
   ok: boolean
   error: any
 }
-
-interface RebassFieldProps extends FieldProps {
-  component: React.ComponentType
-}
-
-const Input: any = styled(_Input).attrs({
-  borderColor: 'black',
-  boxShadow: 'none',
-  borderRadius: 0,
-  border: '1px solid !important',
-  px: 3,
-})``
-
-const Textarea: any = styled(_Textarea).attrs({
-  borderColor: 'black',
-  boxShadow: 'none',
-  borderRadius: 0,
-  border: '1px solid !important',
-  px: 3,
-})``
-
-const Submit = styled(Button).attrs({
-  type: 'submit',
-  color: 'white',
-  bg: 'black',
-  borderRadius: 0,
-  px: 4,
-})`
-  text-transform: uppercase;
-`
-
-const RebassField: React.SFC<RebassFieldProps> = ({
-  component: Component = Input,
-  field: { name },
-  form: { errors, touched },
-  ...props
-}) => (
-  <>
-    <Component {...props} mt={2} mb={3} />
-    {errors[name] && touched[name] && <Text color="red">{errors[name]}</Text>}
-  </>
-)
 
 export default class ContactForm extends React.Component<{}, State> {
   render() {
@@ -78,12 +29,16 @@ export default class ContactForm extends React.Component<{}, State> {
           const errors: Partial<FormFields> = {}
 
           if (!values.email) errors.email = 'You must provide email'
+
+          if (values.email && !values.email.match(/.+@.+/))
+            errors.email = 'Invalid email format'
           if (!values.name) errors.name = 'Please provide your name'
           if (!values.subject) errors.subject = 'Please provide subject'
-          if (!values.message) errors.message = 'Write something in message'
+          if (!values.message) errors.message = 'Write something'
 
           return errors
         }}
+        validateOnChange={false}
         onSubmit={values =>
           fetch('/api/contact', {
             method: 'POST',
@@ -112,13 +67,13 @@ export default class ContactForm extends React.Component<{}, State> {
               />
 
               <Field
+                name="message"
                 render={(props: any) => (
                   <RebassField
                     component={Textarea}
-                    {...props}
-                    name="message"
                     placeholder="Message"
                     rows={5}
+                    {...props}
                   />
                 )}
               />
