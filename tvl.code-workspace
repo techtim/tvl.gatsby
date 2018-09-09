@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": ".",
+      "name": "gatsby"
+    },
+    {
+      "path": "src/contact",
+      "name": "contact"
+    }
+  ],
+  "settings": {}
+}
