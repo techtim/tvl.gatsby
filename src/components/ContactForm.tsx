@@ -1,6 +1,14 @@
-import { Field, Form, Formik } from 'formik'
 import React from 'react'
-import { Text } from 'rebass'
+import { Field, Form, Formik, FieldProps } from 'formik'
+import styled from 'styled-components'
+import {
+  Text,
+  Textarea as _Textarea,
+  Input as _Input,
+  Flex,
+  Box,
+  Button,
+} from 'rebass'
 
 interface FormFields {
   name: string
@@ -13,6 +21,48 @@ interface State {
   ok: boolean
   error: any
 }
+
+interface RebassFieldProps extends FieldProps {
+  component: React.ComponentType
+}
+
+const Input: any = styled(_Input).attrs({
+  borderColor: 'black',
+  boxShadow: 'none',
+  borderRadius: 0,
+  border: '1px solid !important',
+  px: 3,
+})``
+
+const Textarea: any = styled(_Textarea).attrs({
+  borderColor: 'black',
+  boxShadow: 'none',
+  borderRadius: 0,
+  border: '1px solid !important',
+  px: 3,
+})``
+
+const Submit = styled(Button).attrs({
+  type: 'submit',
+  color: 'white',
+  bg: 'black',
+  borderRadius: 0,
+  px: 4,
+})`
+  text-transform: uppercase;
+`
+
+const RebassField: React.SFC<RebassFieldProps> = ({
+  component: Component = Input,
+  field: { name },
+  form: { errors, touched },
+  ...props
+}) => (
+  <>
+    <Component {...props} mt={2} mb={3} />
+    {errors[name] && touched[name] && <Text color="red">{errors[name]}</Text>}
+  </>
+)
 
 export default class ContactForm extends React.Component<{}, State> {
   render() {
@@ -43,24 +93,41 @@ export default class ContactForm extends React.Component<{}, State> {
             .catch(error => this.setState({ ok: false, error }))
         }
       >
-        {({ isSubmitting, errors, touched }) => (
-          <Form>
-            <Field name="name" placeholder="Name" />
-            {errors.name &&
-              touched.name && <Text color="red">{errors.name}</Text>}
-            <Field name="email" placeholder="Email" type="email" />
-            {errors.email &&
-              touched.email && <Text color="red">{errors.email}</Text>}
-            <Field name="subject" placeholder="Subject" />
-            {errors.subject &&
-              touched.subject && <Text color="red">{errors.subject}</Text>}
-            <Field name="message" placeholder="Message" component="textarea" />
-            {errors.message &&
-              touched.message && <Text color="red">{errors.message}</Text>}
-            <button type="submit" disabled={isSubmitting}>
-              Send
-            </button>
-          </Form>
+        {({ isSubmitting }) => (
+          <Box width={['100%', '100%', 300]}>
+            <Form>
+              <Field name="name" placeholder="Name" component={RebassField} />
+
+              <Field
+                name="email"
+                placeholder="Email"
+                type="email"
+                component={RebassField}
+              />
+
+              <Field
+                name="subject"
+                placeholder="Subject"
+                component={RebassField}
+              />
+
+              <Field
+                render={(props: any) => (
+                  <RebassField
+                    component={Textarea}
+                    {...props}
+                    name="message"
+                    placeholder="Message"
+                    rows={5}
+                  />
+                )}
+              />
+
+              <Flex justifyContent="flex-end">
+                <Submit disabled={isSubmitting}>Send</Submit>
+              </Flex>
+            </Form>
+          </Box>
         )}
       </Formik>
     )

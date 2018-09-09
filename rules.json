@@ -1,0 +1,9 @@
+{
+  "rules": [
+    {
+      "pathname": "/api/contact",
+      "method": ["POST"],
+      "dest": "tvl-contact.now.sh"
+    }
+  ]
+}
