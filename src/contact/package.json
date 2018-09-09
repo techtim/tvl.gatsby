@@ -1,0 +1,11 @@
+{
+  "name": "contact",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLCICENSED",
+  "dependencies": {
+    "micro": "^9.3.3",
+    "nodemailer": "^4.6.8"
+  }
+}

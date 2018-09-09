@@ -1,0 +1,9 @@
+{
+  "public": true,
+  "type": "docker",
+  "features": {
+    "cloud": "v2"
+  },
+  "alias": "tvl-contact",
+  "name": "tvl-contact"
+}
