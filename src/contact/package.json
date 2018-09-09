@@ -7,5 +7,13 @@
   "dependencies": {
     "micro": "^9.3.3",
     "nodemailer": "^4.6.8"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "devDependencies": {
+    "ava": "1.0.0-beta.8",
+    "request-promise-native": "^1.0.5",
+    "test-listen": "^1.1.0"
   }
 }
