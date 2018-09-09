@@ -9,10 +9,9 @@ const makeText = message => `
 
 module.exports = async (req, res) => {
   try {
-    const body = await json(req)
+    const { message, email, subject, name } = await json(req)
 
-    const { message, email, subject, name } = body
-
+    // validate input
     if (!message || !email || !subject || !name || !email.match(/.+@.+/)) {
       throw createError(400, 'Invalid input')
     }
@@ -50,9 +49,11 @@ module.exports = async (req, res) => {
 
       send(res, 201, { status: 'OK' })
     } catch (error) {
+      // Something wrong with email
       sendError(500, 'Something went wrong')
     }
   } catch (err) {
+    // JSON parsing failed
     send(res, 400, err.message)
   }
 }
