@@ -4,11 +4,14 @@ import Media from 'react-media'
 import { Box, Fixed, Flex, Image, Text, theme } from 'rebass'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
+
 import burger from './burger.svg'
+import vimeo from './vimeo.svg'
+import fb from './facebook.svg'
 import cross from './cross.svg'
 import logo from './tvl-top-logo.png'
 
-const Menu = styled(Flex).attrs({ is: 'nav' })`
+const Menu = styled(Flex)`
   min-height: 100vh;
   background-color: transparent;
 `
@@ -28,7 +31,7 @@ const NavLink = styled(Link).attrs({
   }
 `
 
-const links: { [index: string]: string } = {
+const Links: { [index: string]: string } = {
   Projects: '/projects',
   Soft: '/soft',
   About: '/about',
@@ -40,21 +43,10 @@ interface BackgroundProps {
 }
 
 // using background-image or background hence separate component and not Box
-const Background =
-  styled.div <
-  BackgroundProps >
-  `
+const Background = styled.div<BackgroundProps>`
   background: ${({ isOpened }) =>
     themeGet(isOpened ? 'gradients.main' : 'colors.white', 'white')};
 `
-
-const Section: React.SFC<{ section: string }> = ({ section }) => (
-  <Flex justifyContent="center">
-    <Text fontSize={3}>
-      <NavLink to={links[section]}>{section}</NavLink>
-    </Text>
-  </Flex>
-)
 
 interface State {
   isOpened: boolean
@@ -78,8 +70,8 @@ export default class Header extends React.Component<{}, State> {
               <Fixed left={0} top={0} right={0} style={{ background: 'white' }}>
                 <Background isOpened={isOpened}>
                   <Flex
-                    justify="space-between"
-                    align="center"
+                    justifyContent="space-between"
+                    alignItems="center"
                     style={{
                       height: 112,
                     }}
@@ -96,28 +88,44 @@ export default class Header extends React.Component<{}, State> {
                     </Box>
                   </Flex>
                   {isOpened ? (
-                    <Menu px={4} py={0} flexDirection="column">
-                      {Object.keys(links).map(section => (
+                    <Menu px={4} py={0} flexDirection="column" is="nav">
+                      {Object.keys(Links).map(section => (
                         <Box py={4} key={section}>
-                          <Section section={section} />
+                          <Text fontSize={3}>
+                            <NavLink to={Links[section]}>{section}</NavLink>
+                          </Text>
                         </Box>
                       ))}
+                      <Flex mt={5}>
+                        <Box mr={2}>
+                          <Image src={fb} />
+                        </Box>
+                        <Image src={vimeo} />
+                      </Flex>
                     </Menu>
                   ) : null}
                 </Background>
               </Fixed>
             ) : (
-              <Flex align="baseline" px={5} py={4} is="nav">
-                <Box mr={6}>
+              <Flex px={[0, 0, 4, 5]} py={4} is="nav">
+                <Box mr={4}>
                   <Link to="/">
-                    <Image src={logo} width={160} height={67} />
+                    <Image src={logo} width={160} />
                   </Link>
                 </Box>
-                {Object.keys(links).map(section => (
-                  <Box mx={4} key={section}>
-                    <Section section={section} />
+                {Object.keys(Links).map(section => (
+                  <Box mx={4} mt="auto" key={section}>
+                    <Text fontSize={3}>
+                      <NavLink to={Links[section]}>{section}</NavLink>
+                    </Text>
                   </Box>
                 ))}
+                <Flex ml="auto" mt="auto">
+                  <Box mr={2}>
+                    <Image src={fb} />
+                  </Box>
+                  <Image src={vimeo} />
+                </Flex>
               </Flex>
             )
           }
