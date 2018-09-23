@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import get from 'lodash/get'
+import get from 'lodash.get'
 import React from 'react'
 import Card from '../components/Card'
 import Layout from '../components/Layout'
