@@ -20,7 +20,7 @@ const BlogPostTemplate: React.SFC<Props> = ({
   data: {
     markdownRemark: {
       html,
-      frontmatter: { title, hero, place, date },
+      frontmatter: { title, hero, place, date, team },
     },
     site: {
       siteMetadata: { title: siteTitle },
@@ -37,7 +37,7 @@ const BlogPostTemplate: React.SFC<Props> = ({
         <Heading
           fontSize={4}
           fontWeight="regular"
-          style={{ textTransform: 'lowercase' }}
+          // style={{ textTransform: 'lowercase' }}
         >
           {title}
         </Heading>
@@ -47,9 +47,11 @@ const BlogPostTemplate: React.SFC<Props> = ({
         {date}
         {place ? `, ${place}` : null}
       </Text>
+      
+      {team ? <Text is="div" color="black" mt={2}> Team: {team} </Text>: null}
 
       <Text
-        color="suvaGray"
+        color="midGrey"
         is="div"
         dangerouslySetInnerHTML={{ __html: html }}
       />
@@ -72,6 +74,7 @@ export const pageQuery = graphql`
         title
         place
         date
+        team
         hero {
           publicURL
         }

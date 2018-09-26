@@ -14,6 +14,7 @@ const colors = {
   gray: '#828282',
   // skeletons silver: '#c4c4c4',
   suvaGrey2: '#8c8989',
+  midGrey: '#5d5b59',
 
   // colors
   seagul: '#56ccf2',

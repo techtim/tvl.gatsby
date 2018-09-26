@@ -24,7 +24,11 @@ const Soft: React.SFC<Props> = ({
           to={node.fields.slug}
           key={node.fields.slug}
           title={title}
-          image={node.frontmatter.hero.publicURL}
+          image={node.frontmatter.icon
+            ? node.frontmatter.icon.publicURL
+            : node.frontmatter.hero
+              ? node.frontmatter.hero.publicURL
+              : null}
         />
       )
     })}
@@ -49,6 +53,9 @@ export const query = graphql`
             date
             title
             hero {
+              publicURL
+            }
+            icon {
               publicURL
             }
           }
