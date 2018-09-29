@@ -22,6 +22,7 @@ const colors = {
   halfBaked: 'rgba(133, 202, 213, 0.84)',
   tickleMePink: 'rgba(241, 123, 171, 0.52)',
   ripeLemon: 'rgba(251, 225, 49, 0.45)',
+  overlay: 'rgba(12, 11, 11, 0.5)',
 }
 
 export default {
