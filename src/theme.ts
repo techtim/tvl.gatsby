@@ -1,6 +1,6 @@
 // as named by
 // https://figstyle.freighter.studio/styleguide/GhDWRZ9NJ3ddxQGJHlAtewiy/shadows,fonts,gradients,colors
-const colors = {
+export const colors = {
   black: '#000',
   white: '#fff',
 
@@ -28,7 +28,6 @@ const colors = {
 export default {
   fonts: {
     sans: '"Maven Pro", sans-serif',
-    mono: '"Fira Mono", monospace',
   },
 
   fontWeights: {

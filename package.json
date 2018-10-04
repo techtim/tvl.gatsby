@@ -35,7 +35,6 @@
     "serve": "^10.0.1",
     "styled-components": "^3.4.9",
     "styled-system": "^3.1.4",
-    "typeface-fira-mono": "^0.0.54",
     "typeface-maven-pro": "^0.0.54"
   },
   "devDependencies": {

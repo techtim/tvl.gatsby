@@ -3,6 +3,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Box, Heading, Image, Text } from 'rebass'
 import Layout from '../components/Layout'
+import Post from '../components/Post'
 
 interface Props {
   data: {
@@ -32,9 +33,10 @@ const BlogPostTemplate: React.SFC<Props> = ({
 
     {hero ? <Image src={hero.publicURL} width="100%" /> : null}
 
-    <Box pt={3} px={[0, 5]} is="article">
+    <Box mb={6} mt={3} px={[0, 5]} is="article">
       <header>
         <Heading
+          mt={5}
           fontSize={4}
           fontWeight="regular"
           // style={{ textTransform: 'lowercase' }}
@@ -43,18 +45,18 @@ const BlogPostTemplate: React.SFC<Props> = ({
         </Heading>
       </header>
 
-      <Text is="div" color="suvaGray" mt={1}>
-        {date}
+      {team ? (
+        <Text is="div" color="suvaGray" fontWeight={500} mt={1}>
+          Team: {team}
+        </Text>
+      ) : null}
+
+      <Text is="div" color="suvaGray" mt={1} fontWeight={500}>
+        <time>{date}</time>
         {place ? `, ${place}` : null}
       </Text>
-      
-      {team ? <Text is="div" color="black" mt={2}> Team: {team} </Text>: null}
 
-      <Text
-        color="midGrey"
-        is="div"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+      <Post dangerouslySetInnerHTML={{ __html: html }} />
     </Box>
   </Layout>
 )

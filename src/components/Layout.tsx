@@ -1,14 +1,14 @@
 import React from 'react'
-import { Box, Container, Provider } from 'rebass'
+import { Box, Container, Provider, Text } from 'rebass'
 import { injectGlobal } from 'styled-components'
-import 'typeface-fira-mono'
 import 'typeface-maven-pro'
 import Header from '../components/Header'
-import theme from '../theme'
+import theme, { colors } from '../theme'
 
 injectGlobal`
   body, p {
     margin: 0;
+    font-size: 16px;
   }
 
   * {
@@ -23,6 +23,12 @@ const Layout: React.SFC = ({ children }) => (
       <Container pt={112} px={0}>
         {children}
       </Container>
+
+      {/* <Box is="footer" width="100%" pt={1} pb={2} px={5}>
+        <Text fontSize={0} color="gray">
+          ⓒ TVL {new Date().getFullYear()}
+        </Text>
+      </Box> */}
     </Box>
   </Provider>
 )
