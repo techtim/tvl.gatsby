@@ -17,7 +17,14 @@ const Overlay = styled(Absolute).attrs<any>({
   align-items: center;
 `
 
-const Title = styled(Text)<{ preview: boolean }>`
+interface TitleProps {
+  preview: boolean
+  [index: string]: any
+}
+
+const Title = styled(({ preview, ...props }: TitleProps) => (
+  <Text {...props} />
+))`
   transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
   // for a11y
   visibility: ${({ preview }) => (preview ? 'visible' : 'hidden')};
@@ -36,13 +43,24 @@ interface State {
 
 export default class Card extends React.Component<Props> {
   state: State = { preview: false }
+  timer: any
 
-  onEnter: React.PointerEventHandler<HTMLImageElement> = () => {
-    this.setState({ preview: true })
+  onEnter: React.PointerEventHandler<HTMLImageElement> = e => {
+    if (e.pointerType === 'mouse') this.setState({ preview: true })
+
+    this.timer = setTimeout(() => {
+      this.setState({ preview: true })
+    }, 300)
   }
 
-  onLeave: React.PointerEventHandler<HTMLImageElement> = () => {
+  onLeave: React.PointerEventHandler<HTMLImageElement> = e => {
+    if (this.timer) e.preventDefault()
+
     this.setState({ preview: false })
+  }
+
+  componentWillUnmount() {
+    this.timer && clearTimeout(this.timer)
   }
 
   render() {
