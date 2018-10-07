@@ -46,11 +46,15 @@ export default class Card extends React.Component<Props> {
   timer: any
 
   onEnter: React.PointerEventHandler<HTMLImageElement> = e => {
-    if (e.pointerType === 'mouse') this.setState({ preview: true })
-
-    this.timer = setTimeout(() => {
+    if (e.pointerType === 'mouse') {
       this.setState({ preview: true })
-    }, 300)
+    } else {
+      if (this.timer) clearTimeout(this.timer)
+
+      this.timer = setTimeout(() => {
+        this.setState({ preview: true })
+      }, 300)
+    }
   }
 
   onLeave: React.PointerEventHandler<HTMLImageElement> = e => {
