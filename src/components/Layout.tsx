@@ -1,9 +1,13 @@
 import React from 'react'
-import { Box, Container, Provider, Text } from 'rebass'
-import { injectGlobal } from 'styled-components'
+import { Box, Provider } from 'rebass'
+import styled, { injectGlobal } from 'styled-components'
 import 'typeface-maven-pro'
 import Header from '../components/Header'
-import theme, { colors } from '../theme'
+import theme from '../theme'
+
+const Container = styled(Box)`
+  max-width: 1240px;
+`
 
 injectGlobal`
   body, p {
@@ -20,7 +24,7 @@ const Layout: React.SFC = ({ children }) => (
   <Provider theme={theme}>
     <Box width="100%">
       <Header />
-      <Container pt={112} px={0}>
+      <Container pt={112} px={0} mx="auto">
         {children}
       </Container>
 

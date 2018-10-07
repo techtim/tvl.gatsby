@@ -25,11 +25,7 @@ const Social: React.SFC = () => (
       }
     `}
     render={({ site }) => (
-<<<<<<< HEAD
-      <Flex flex="1 0 auto" ml="auto" mt="auto" justifyContent="flex-end">
-=======
       <Flex flex="1 0 auto" mt="auto">
->>>>>>> Fix mobile nav overlay
         <Inline mr={1}>
           <a href={site.siteMetadata.fb} target="_blank">
             <Image src={fb} width={24} />
