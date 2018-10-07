@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import theme from '../theme'
 
 const Container = styled(Box)`
+  width: 100%;
   max-width: 1240px;
 `
 
@@ -24,11 +25,11 @@ const Layout: React.SFC = ({ children }) => (
   <Provider theme={theme}>
     <Flex flexDirection="column" width="100%" style={{ minHeight: '100vh' }}>
       <Header />
-      <Container pt={112} px={0} mx="auto">
+      <Container pt={112} px={[0, 4]} mx="auto">
         {children}
       </Container>
 
-      <Box is="footer" width="100%" pt={1} pb={2} px={5} mt="auto">
+      <Box is="footer" width="100%" pt={4} mb={2} px={[0, 4]} mt="auto">
         <Text fontSize={0} color="gray">
           ⓒ TVL {new Date().getFullYear()}
         </Text>
