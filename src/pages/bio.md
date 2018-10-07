@@ -2,9 +2,7 @@ Tim Tavlintsev
 =====
 ###Programmer, Visual Artist and Synth Lover
 
-Born in Moscow, Russia 1988
-
-Tim Tavlintsev is a software and web developer, digital artist who creates interactive installations and physical objects.
+Tim Tavlintsev is a software engineer, digital artist and light designer who creates interactive installations and physical objects.
 
 Не was born in Moscow in 1988. After 9th grade went to Moscow Technical College where he started to learn programming. After the college decided to go to the National Research Nuclear University (MEPhI) on the Cybernetics faculty to improve knowledge in different spheres of IT.
 
@@ -22,36 +20,51 @@ In 2014 "project:Icosahedron" got to the final of the international competition 
 
 In 2014 in close collaboration with SilaSveta created permanent decorations for Gipsy Club. Tim as technical and creative director took part in forming the concept and created software-hardware system to control 1000m LED strips in realtime and audio reactive.
 
-PROFESSIONAL EXPERIENCE
-2016 - NOW
-Habidatum
-C++ Developer 
-C++, CUDA, OpenGL, GLSL, volumetric rendering, raytracing
-2012 - NOW
-TVL - Technological Visuals & Light
+###Professional Experience:
+
+__2012 - NOW__ TVL - Technological Visuals & Light
+
 Founder/Chief Everything Developer
-openFrameworks(C++), OpenGL, Arduino, C, OSC, MIDI, Kinect, digital LEDs, RPI, OpenCV, DMX
-2013 - 2013
-BSPK Travel
+
+*openFrameworks(C++), OpenGL, Arduino, C, OSC, MIDI, Kinect, digital LEDs, Raspberry Pi, OpenCV, DMX*
+
+__2016 - 2018__ Habidatum
+
+C++ Developer 
+
+*C++, CUDA, OpenGL, GLSL, volumetric rendering, raytracing*
+
+__2013 - 2013__ BSPK Travel
+
 Senior Web Developer
-Creating backend logic and data structures for travel startup, connect with ticket booking api
-Perl, Mojolicious, Nginx, Debian, MongoDB
-2011 - 2013
-SUP Media
+
+*Creating backend logic and data structures for travel startup, connect with ticket booking api
+Perl, Mojolicious, Nginx, Debian, MongoDB*
+
+__2011 - 2013__ SUP Media
+
 Perl Backend Developer
-Creating backend logic for web advertising campaigns
-Perl, Mojolicious, Nginx, Debian, MongoDB
-2008 - 2011
-Rambler Internet Holding
+
+*Creating backend logic for web advertising campaigns Perl, Mojolicious, Nginx, Debian, MongoDB*
+
+__2008 - 2011__ Rambler Internet Holding
+
 Perl Backend Developer
-Bug fixing and new functionality in Mail Department
-Perl, Apache, Nginx, MySql, PostgreSql
-EDUCATION
-2007 - 2012
-Cybernetics Faculty
+*Bug fixing and new functionality in Mail Department
+Perl, Apache, Nginx, MySql, PostgreSql*
+
+###Education:
+
+__2007 - 2012__
+
+Cybernetics Faculty in
 National Research Nuclear University (MEPhI)
-2003 - 2007
-Programming Faculty
+
+__2003 - 2007__
+
+Programming Faculty in
 Moscow Technical College
-1995 - 2003
+
+__1995 - 2003__
+
 Liberal School 903

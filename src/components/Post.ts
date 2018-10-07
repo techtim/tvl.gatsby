@@ -18,7 +18,7 @@ const Post = styled.div`
     margin: 0.3rem 0;
   }
 
-  & a, & em {
+  & a {
     color: #51b5e4;
     font-style: normal;
   }

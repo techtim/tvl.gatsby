@@ -25,6 +25,7 @@ export const colors = {
   overlay: 'rgba(12, 11, 11, 0.5)',
 }
 
+/// styles for style component
 export default {
   fonts: {
     sans: '"Maven Pro", sans-serif',
@@ -32,7 +33,7 @@ export default {
 
   fontWeights: {
     medium: 400,
-    regular: 500,
+    regular: 300,
   },
 
   colors,
