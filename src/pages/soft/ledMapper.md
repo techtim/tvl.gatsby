@@ -1,25 +1,29 @@
 ---
 title: ledMapper
-icon: './ledmapper/ledMapper_icon.png'
+icon: './ledmapper/LedMapper_preview.png'
 hero: './ledmapper/ledMapper_screenshot.png'
+order: 1
 ---
 
-App for receiving Syphon input and mapping it to LPD8806/WS2812 LED strips using network connected RaspberryPi clients.
+Open-source software+hardware platform to control distributed light systems by network.
+Current version support digital LED strips and fixtures based on popular ICs like WS281X, SK6822, LPD8806, APA102, SK9822.
+It was tested for more than 30 controllers driving more than 60 000 LEDs 24/7 for a year.
 
-Compiled Apps for Windows and OSX and image for RaspberryPi 3 can be found here: <a href="https://yadi.sk/d/wtCvC4sx3Ndqwv" target="_blank">_Binaries and images_</a>
+Platform consists of:
+* app for mapping/grabbing LEDS from using Syphon (OSX) or Spout(WIN) or video player as input 
+* ready to use image for Raspberry Pi 3, that runs listens for udp packets and sends data to LEDs via GPIO
 
-Consists of:
 
-* app for mapping/grabbing LEDS from Syphon (OSX) or Spout(WIN) input
-* executables on RPI side, listens for udp packets and send via GPIO data to LEDs
+
+Detailed interface description can be found on [github Wiki](https://github.com/techtim/ledMapper/wiki/ledMapper-Interface).
 
 ### Source
-
 All source files are on [ledMapper github page](https://github.com/techtim/ledMapper)
 ledMapper is licensed under the GNU General Public License v2.0
 
-### Downloads
+![led Mapper icon](./ledmapper/ledMapper_icon_200.png)
 
+### Downloads
 OSX  |   WIN    |  RPI image
 :---: | :---: | :---:
 [.app V0.1](http://tvl.io/download/ledMapperOSX_0.1.zip) | [.exe V0.1](http://tvl.io/download/ledMapperWIN_0.1.zip) | [image V0.1](http://tvl.io/download/ledMapperTvl_Alpha_image.7z)

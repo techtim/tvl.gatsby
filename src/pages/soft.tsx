@@ -40,7 +40,7 @@ export default Soft
 export const query = graphql`
   {
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___order], order: ASC }
       filter: { fileAbsolutePath: { regex: "/soft/" } }
     ) {
       edges {
@@ -50,7 +50,7 @@ export const query = graphql`
             slug
           }
           frontmatter {
-            date
+            order
             title
             hero {
               publicURL

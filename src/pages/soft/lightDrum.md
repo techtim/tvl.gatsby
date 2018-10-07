@@ -1,6 +1,7 @@
 ---
 title: lightDrum
 hero: './lightdrum/lightDrum_real.png'
+order: 2
 ---
 
 App for making MIDI controlled light stage instrument from RaspberryPI 3 and USB-MIDI cable from Alesis, M-audio, etc. just check if they compatible with RPI.
