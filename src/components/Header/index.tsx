@@ -66,7 +66,12 @@ export default class Header extends React.Component<{}, State> {
         <Media query={{ maxWidth: theme.breakpoints[1] }}>
           {(mobile: boolean) =>
             mobile ? (
-              <Fixed left={0} top={0} right={0} style={{ background: 'white' }}>
+              <Fixed
+                left={0}
+                top={0}
+                right={0}
+                style={{ background: 'white', zIndex: 1000 }}
+              >
                 <Background isOpened={isOpened}>
                   <Flex
                     justifyContent="space-between"
@@ -95,7 +100,9 @@ export default class Header extends React.Component<{}, State> {
                           </Text>
                         </Box>
                       ))}
-                      <Social />
+                      <Box mt={4}>
+                        <Social />
+                      </Box>
                     </Menu>
                   ) : null}
                 </Background>
@@ -121,7 +128,9 @@ export default class Header extends React.Component<{}, State> {
                     </Box>
                   ))}
                 </Flex>
-                <Social />
+                <Box mt="auto" ml="auto">
+                  <Social />
+                </Box>
               </Flex>
             )
           }
