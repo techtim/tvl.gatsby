@@ -4,6 +4,9 @@ module.exports = {
     author: 'Anton Vasin',
     description: 'TVL website',
     siteUrl: 'https://tvl.io',
+    vimeo: 'https://vimeo.com/timtvl',
+    fb: 'https://www.facebook.com/timvisuals/',
+    youtube: 'https://www.youtube.com/channel/UCUMPgeNiY0WnSZCiyxHOquQ',
   },
   plugins: [
     {

@@ -5,9 +5,8 @@ import { Box, Fixed, Flex, Image, Text, theme } from 'rebass'
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
 
+import Social from './Social'
 import burger from './burger.svg'
-import vimeo from './vimeo.svg'
-import fb from './facebook.svg'
 import cross from './cross.svg'
 import logo from './tvl-top-logo.png'
 
@@ -96,38 +95,33 @@ export default class Header extends React.Component<{}, State> {
                           </Text>
                         </Box>
                       ))}
-                      <Flex mt={5}>
-                        <Box mr={2}>
-                          <Image src={fb} />
-                        </Box>
-                        <Image src={vimeo} />
-                      </Flex>
+                      <Social />
                     </Menu>
                   ) : null}
                 </Background>
               </Fixed>
             ) : (
-              <Flex px={[0, 0, 4, 5]} py={4} is="nav">
-                <Box mr={4}>
+              <Flex
+                px={[0, 0, 4, 5]}
+                py={4}
+                is="nav"
+                justifyContent="space-between"
+              >
+                <Box mr={4} flex="0 0 auto">
                   <Link to="/">
                     <Image src={logo} width={160} />
                   </Link>
                 </Box>
-                {Object.keys(Links).map(section => (
-                  <Box mx={4} mt="auto" key={section}>
-                    <Text fontSize={3}>
-                      <NavLink to={Links[section]}>{section}</NavLink>
-                    </Text>
-                  </Box>
-                ))}
-                <Flex ml="auto" mt="auto" pb="2px">
-                  <Box mr={1}>
-                    <Image src={fb} />
-                  </Box>
-                  <Box>
-                    <Image src={vimeo} />
-                  </Box>
+                <Flex>
+                  {Object.keys(Links).map(section => (
+                    <Box mx={[0, 0, 3, 4]} mt="auto" key={section}>
+                      <Text fontSize={3}>
+                        <NavLink to={Links[section]}>{section}</NavLink>
+                      </Text>
+                    </Box>
+                  ))}
                 </Flex>
+                <Social />
               </Flex>
             )
           }
