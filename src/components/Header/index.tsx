@@ -120,11 +120,13 @@ export default class Header extends React.Component<{}, State> {
                     </Text>
                   </Box>
                 ))}
-                <Flex ml="auto" mt="auto">
-                  <Box mr={2}>
+                <Flex ml="auto" mt="auto" pb="2px">
+                  <Box mr={1}>
                     <Image src={fb} />
                   </Box>
-                  <Image src={vimeo} />
+                  <Box>
+                    <Image src={vimeo} />
+                  </Box>
                 </Flex>
               </Flex>
             )
