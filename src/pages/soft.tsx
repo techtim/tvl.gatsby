@@ -3,6 +3,7 @@ import get from 'lodash.get'
 import React from 'react'
 import Card from '../components/Card'
 import Layout from '../components/Layout'
+import Gallery from '../components/Gallery'
 
 interface Props {
   data: {
@@ -16,22 +17,22 @@ const Soft: React.SFC<Props> = ({
   },
 }) => (
   <Layout>
-    {projects.map(({ node }) => {
-      const title = get(node, 'frontmatter.title') || node.fields.slug
-
-      return (
+    <Gallery>
+      {projects.map(({ node }) => (
         <Card
           to={node.fields.slug}
           key={node.fields.slug}
-          title={title}
-          image={node.frontmatter.icon
-            ? node.frontmatter.icon.publicURL
-            : node.frontmatter.hero
-              ? node.frontmatter.hero.publicURL
-              : null}
+          title={get(node, 'frontmatter.title') || node.fields.slug}
+          image={
+            node.frontmatter.icon
+              ? node.frontmatter.icon.childImageSharp.resize.src
+              : node.frontmatter.hero
+                ? node.frontmatter.hero.childImageSharp.resize.src
+                : null
+          }
         />
-      )
-    })}
+      ))}
+    </Gallery>
   </Layout>
 )
 
@@ -53,10 +54,10 @@ export const query = graphql`
             order
             title
             hero {
-              publicURL
+              ...galleryImage
             }
             icon {
-              publicURL
+              ...galleryImage
             }
           }
         }

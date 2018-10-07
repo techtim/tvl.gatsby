@@ -43,6 +43,16 @@ const Index: React.SFC<Props> = ({
 
 export default Index
 
+export const galleryImage = graphql`
+  fragment galleryImage on File {
+    childImageSharp {
+      resize(width: 592, height: 352) {
+        src
+      }
+    }
+  }
+`
+
 export const pageQuery = graphql`
   {
     site {
@@ -64,11 +74,7 @@ export const pageQuery = graphql`
             title
             hero {
               publicURL
-              childImageSharp {
-                resize(width: 592, height: 352) {
-                  src
-                }
-              }
+              ...galleryImage
             }
           }
         }
@@ -88,11 +94,7 @@ export const pageQuery = graphql`
             title
             hero {
               publicURL
-              childImageSharp {
-                resize(width: 592, height: 352) {
-                  src
-                }
-              }
+              ...galleryImage
             }
           }
         }
