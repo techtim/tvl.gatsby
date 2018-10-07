@@ -8,9 +8,9 @@ place: Gipsy, Moscow, Russia
 
 The project for Gipsy Club, produced in close collaboration with SilaSveta. Two months of material preparations, prototyping, night assembling and fantastic work from the great team.
 
-<iframe width="800" height="400" src="https://player.vimeo.com/video/112188907" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe>
+<iframe width="1000" height="500" src="https://player.vimeo.com/video/112188907" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe>
 
-__Technical details:__
+###Technical details:
 * 1000 meters of addressable LED strips that were mounted inside lightboxes built right on the columns.
 * Custom OF software for LED mapping was developed to control all the LEDs. 
 * Additional FFGL plugin for Resolume was developed to allow VJ control the light system in real-time and in sync with mapping projection.
@@ -19,4 +19,4 @@ __Technical details:__
 
 Tools: openFrameworks + RPI + Syphon + FFGL + Digital LED strip LPD8806
 
-<iframe width="800" height="600" src="https://www.youtube.com/embed/k29sZQY9SUY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="1000" height="500" src="https://www.youtube.com/embed/k29sZQY9SUY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

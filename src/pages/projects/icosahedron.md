@@ -2,7 +2,8 @@
 date: 17-03-2012
 title: Icosahedron
 place: Arma17, Moscow, Russia
-hero: './icosahedron/icosahedron-blue.jpg'
+videohero: 86767184
+icon: './icosahedron/icosahedron-blue.jpg'
 team: Tim Tavlinsev, Anton Podkopaev
 ---
 
