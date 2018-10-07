@@ -6,7 +6,7 @@ const Post = styled.div`
   font-weight: 300;
 
   & > p {
-    margin: 0.7rem 0 .7rem 0;
+    margin: 0.7rem 0 0.7rem 0;
     line-height: 1.25;
   }
 
@@ -24,21 +24,32 @@ const Post = styled.div`
   }
 
   & table {
-    width: 100%;
+    width: fit-content;
     overflow: auto;
     display: block;
     border-spacing: 0;
-    border-collapse: collapse; }
-  & table th {
-      font-weight: bold; }
-  & table th, & table td {
+    border-collapse: collapse;
+    margin: 0 auto;
+
+    & th {
+      font-weight: bold;
+    }
+
+    & th,
+    & td {
       border: 1px solid #ddd;
-      padding: 6px 13px; }
-  & table tr {
+      padding: 6px 13px;
+    }
+
+    & tr {
       border-top: 1px solid #ccc;
-      background-color: #fff; }
-  & table tr:nth-child(2n) {
-        background-color: #f8f8f8;}
+      background-color: ${themeGet('colors.white')};
+    }
+
+    & tr:nth-child(2n) {
+      background-color: ${themeGet('colors.lightGray')};
+    }
+  }
 `
 
 export default Post
