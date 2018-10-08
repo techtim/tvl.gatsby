@@ -5,12 +5,25 @@ const Post = styled.div`
   color: ${themeGet('colors.midGrey')};
   font-weight: 300;
 
+  /* Add padding for text on small screens */
+  & > p,
+  & > h1,
+  & > h2,
+  & > h3 {
+    @media only screen and (max-width: 32em) {
+      padding: 0 16px;
+    }
+  }
+
   & p {
     margin: 0.7rem 0 0.7rem 0;
     line-height: 1.25;
 
-    @media only screen and (max-width: 32em) {
-      padding: 0 16px;
+    /* Pull images aside to be full width on small screens */
+    & a.gatsby-resp-image-link {
+      @media only screen and (max-width: 32em) {
+        margin: 0 -16px;
+      }
     }
   }
 
