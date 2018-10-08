@@ -66,47 +66,50 @@ export default class Header extends React.Component<{}, State> {
         <Media query={{ maxWidth: theme.breakpoints[1] }}>
           {(mobile: boolean) =>
             mobile ? (
-              <Fixed
-                left={0}
-                top={0}
-                right={0}
-                style={{ background: 'white', zIndex: 1000 }}
-              >
-                <Background isOpened={isOpened}>
-                  <Flex
-                    justifyContent="space-between"
-                    alignItems="center"
-                    style={{
-                      height: 112,
-                    }}
-                    px={4}
-                  >
-                    <Link
-                      to="/"
-                      onClick={() => this.setState({ isOpened: false })}
+              <>
+                <div style={{ height: '88px' }} />
+                <Fixed
+                  left={0}
+                  top={0}
+                  right={0}
+                  style={{ background: 'white', zIndex: 1000 }}
+                >
+                  <Background isOpened={isOpened}>
+                    <Flex
+                      justifyContent="space-between"
+                      alignItems="center"
+                      style={{
+                        height: 88,
+                      }}
+                      px={4}
                     >
-                      <Image src={logo} width={108} />
-                    </Link>
-                    <Box onClick={this.onToggle}>
-                      <Image src={isOpened ? cross : burger} />
-                    </Box>
-                  </Flex>
-                  {isOpened ? (
-                    <Menu px={4} py={0} flexDirection="column" is="nav">
-                      {Object.keys(Links).map(section => (
-                        <Box py={4} key={section}>
-                          <Text fontSize={3}>
-                            <NavLink to={Links[section]}>{section}</NavLink>
-                          </Text>
-                        </Box>
-                      ))}
-                      <Box mt={4}>
-                        <Social />
+                      <Link
+                        to="/"
+                        onClick={() => this.setState({ isOpened: false })}
+                      >
+                        <Image src={logo} width={108} />
+                      </Link>
+                      <Box onClick={this.onToggle}>
+                        <Image src={isOpened ? cross : burger} />
                       </Box>
-                    </Menu>
-                  ) : null}
-                </Background>
-              </Fixed>
+                    </Flex>
+                    {isOpened ? (
+                      <Menu px={4} py={0} flexDirection="column" is="nav">
+                        {Object.keys(Links).map(section => (
+                          <Box py={4} key={section}>
+                            <Text fontSize={3}>
+                              <NavLink to={Links[section]}>{section}</NavLink>
+                            </Text>
+                          </Box>
+                        ))}
+                        <Box mt={4}>
+                          <Social />
+                        </Box>
+                      </Menu>
+                    ) : null}
+                  </Background>
+                </Fixed>
+              </>
             ) : (
               <Flex
                 px={[0, 0, 4, 5]}

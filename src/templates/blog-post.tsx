@@ -40,7 +40,7 @@ const BlogPostTemplate: React.SFC<Props> = ({
   >
     <Helmet title={`${title} | ${siteTitle}`} />
 
-    <Box px={[0, 5]} is="article">
+    <article>
       <header>
         <Heading
           fontSize={4}
@@ -63,7 +63,7 @@ const BlogPostTemplate: React.SFC<Props> = ({
       </Text>
 
       <Post dangerouslySetInnerHTML={{ __html: html }} />
-    </Box>
+    </article>
   </Layout>
 )
 

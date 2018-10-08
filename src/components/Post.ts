@@ -5,9 +5,13 @@ const Post = styled.div`
   color: ${themeGet('colors.midGrey')};
   font-weight: 300;
 
-  & > p {
+  & p {
     margin: 0.7rem 0 0.7rem 0;
     line-height: 1.25;
+
+    @media only screen and (max-width: 32em) {
+      padding: 0 16px;
+    }
   }
 
   & strong {
