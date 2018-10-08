@@ -8,8 +8,9 @@ const Vimeo = ({ id }) => (
     style={{
       position: 'relative',
       width: '100%',
-      height: 800,
+      height: 600,
     }}
+    allow="autoplay; fullscreen"
     frameBorder="0"
     webkitAllowFullScreen
     mozAllowFullScreen

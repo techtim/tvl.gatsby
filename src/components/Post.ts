@@ -23,6 +23,12 @@ const Post = styled.div`
     font-style: normal;
   }
 
+  & h3 {
+    font-style: normal;
+    font-weight: 400;
+    color: #000000;
+  }
+
   & table {
     width: fit-content;
     overflow: auto;
