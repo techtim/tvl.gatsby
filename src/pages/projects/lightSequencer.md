@@ -15,4 +15,4 @@ This LED lighting system was installed on the first AUX event in the Arma17 club
 
 Later the app transformed to ideal DMX LED Par controller with auto tempo sync, much enjoyed by musicians running small events without budget for a lighting guy.
 
-<iframe src="https://player.vimeo.com/video/123994731" width="1000" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/123994731" width="16" height="9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

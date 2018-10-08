@@ -18,4 +18,4 @@ The space consists of icosahedron object and simple geometric shapes (pyramids, 
 This project becomes the finalist in Google DevArt competition.
 Detailed description of this project can be found at [DevArt Icosahedron](https://devart.withgoogle.com/#/project/16557756)
 
-<iframe src="https://player.vimeo.com/video/85965568" width="800" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/85965568" width="16" height="9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
