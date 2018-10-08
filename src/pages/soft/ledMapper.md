@@ -1,7 +1,7 @@
 ---
 title: ledMapper
 icon: './ledmapper/LedMapper_preview.png'
-videohero: 293953229
+videoHero: https://player.vimeo.com/video/293953229
 order: 1
 ---
 

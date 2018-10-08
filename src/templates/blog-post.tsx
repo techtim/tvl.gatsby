@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { Box, Heading, Image, Text } from 'rebass'
 import Layout from '../components/Layout'
 import Post from '../components/Post'
-import Vimeo from '../components/Vimeo'
+import Video from '../components/Video'
 
 interface Props {
   data: {
@@ -22,26 +22,27 @@ const BlogPostTemplate: React.SFC<Props> = ({
   data: {
     markdownRemark: {
       html,
-      frontmatter: { title, hero, videohero, place, date, team },
+      frontmatter: { title, hero, videoHero, place, date, team },
     },
     site: {
       siteMetadata: { title: siteTitle },
     },
   },
 }) => (
-  <Layout>
+  <Layout
+    hero={
+      videoHero ? (
+        <Video src={videoHero} />
+      ) : hero ? (
+        <Image src={hero.publicURL} width="100%" />
+      ) : null
+    }
+  >
     <Helmet title={`${title} | ${siteTitle}`} />
 
-    {videohero ? (
-      <Vimeo id={videohero} />
-    ) : hero ? (
-      <Image src={hero.publicURL} width="100%" />
-    ) : null}
-
-    <Box mb={6} mt={3} px={[0, 5]} is="article">
+    <Box px={[0, 5]} is="article">
       <header>
         <Heading
-          mt={5}
           fontSize={4}
           fontWeight="regular"
           // style={{ textTransform: 'lowercase' }}
@@ -85,7 +86,7 @@ export const pageQuery = graphql`
         hero {
           publicURL
         }
-        videohero
+        videoHero
       }
     }
   }

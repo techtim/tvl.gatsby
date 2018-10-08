@@ -2,7 +2,7 @@
 date: 17-03-2012
 title: light:Sequencer
 place: Arma17, Moscow, Russia
-videohero: 85859601
+videoHero: https://player.vimeo.com/video/85859601
 icon: './lightSequencer/lightSeq-arma.png'
 ---
 

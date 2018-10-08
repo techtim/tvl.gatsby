@@ -6,7 +6,6 @@ import Header from '../components/Header'
 import theme from '../theme'
 
 const Container = styled(Box)`
-  width: 100%;
   max-width: 1240px;
 `
 
@@ -21,15 +20,20 @@ injectGlobal`
   }
 `
 
-const Layout: React.SFC = ({ children }) => (
+interface Props {
+  hero?: React.ReactNode
+}
+
+const Layout: React.SFC<Props> = ({ children, hero }) => (
   <Provider theme={theme}>
     <Flex flexDirection="column" width="100%" style={{ minHeight: '100vh' }}>
       <Header />
-      <Container pt={112} px={[0, 4]} mx="auto">
+      {hero && <Box width="100%">{hero}</Box>}
+      <Container width="100%" pt={4} px={[0, 4]} mx="auto">
         {children}
       </Container>
 
-      <Box is="footer" width="100%" pt={4} mb={2} px={[0, 4]} mt="auto">
+      <Box is="footer" width="100%" pt={5} mb={3} px={[0, 4]} mt="auto">
         <Text fontSize={0} color="gray">
           ⓒ TVL {new Date().getFullYear()}
         </Text>

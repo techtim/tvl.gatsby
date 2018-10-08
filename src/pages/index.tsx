@@ -2,15 +2,17 @@ import { graphql } from 'gatsby'
 import get from 'lodash.get'
 import React from 'react'
 import Helmet from 'react-helmet'
+
 import Card from '../components/Card'
 import Layout from '../components/Layout'
 import Gallery from '../components/Gallery'
+import Video from '../components/Video'
 
 interface Props {
   data: {
     projects: { edges: any[] }
     soft: { edges: any[] }
-    site: { siteMetadata: { title: string } }
+    site: { siteMetadata: { title: string; mainHeroSrc: string } }
   }
 }
 
@@ -19,14 +21,12 @@ const Index: React.SFC<Props> = ({
     projects: { edges: projects },
     soft: { edges: soft },
     site: {
-      siteMetadata: { title },
+      siteMetadata: { title, mainHeroSrc },
     },
   },
 }) => (
-  <Layout>
+  <Layout hero={<Video src={mainHeroSrc} />}>
     <Helmet title={title} />
-
-    {/* TODO: site hero */}
 
     <Gallery>
       {projects.concat(soft).map(({ node }) => (
@@ -58,6 +58,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        mainHeroSrc
       }
     }
     projects: allMarkdownRemark(
