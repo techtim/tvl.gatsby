@@ -1,13 +1,13 @@
 ---
 title: ledMapper
 icon: './ledmapper/LedMapper_preview.png'
-videoHero: https://player.vimeo.com/video/293953229
+videoHero: https://player.vimeo.com/video/293953229?title=0&autoplay=1
 order: 1
 ---
 
 Open-source software+hardware platform to control distributed light systems by network.
 Current version support digital LED strips and fixtures based on popular ICs like WS281X, SK6822, LPD8806, APA102, SK9822.
-It was tested for more than 30 controllers driving more than 60 000 LEDs 24/7 for a year.
+Over the last few years it was tested for more than 30 controllers driving more than 60 000 LEDs.
 
 Platform consists of:
 

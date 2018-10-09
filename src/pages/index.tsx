@@ -10,16 +10,16 @@ import Video from '../components/Video'
 
 interface Props {
   data: {
-    projects: { edges: any[] }
     soft: { edges: any[] }
+    projects: { edges: any[] }
     site: { siteMetadata: { title: string; mainHeroSrc: string } }
   }
 }
 
 const Index: React.SFC<Props> = ({
   data: {
-    projects: { edges: projects },
     soft: { edges: soft },
+    projects: { edges: projects },
     site: {
       siteMetadata: { title, mainHeroSrc },
     },
@@ -29,12 +29,12 @@ const Index: React.SFC<Props> = ({
     <Helmet title={title} />
 
     <Gallery>
-      {projects.concat(soft).map(({ node }) => (
+      {soft.concat(projects).map(({ node }) => (
         <Card
           to={node.fields.slug}
           key={node.fields.slug}
           title={get(node, 'frontmatter.title') || node.fields.slug}
-          image={get(node, 'frontmatter.hero.childImageSharp.resize.src') || ''}
+          image={get(node, 'frontmatter.icon.childImageSharp.resize.src') || ''}
         />
       ))}
     </Gallery>
@@ -73,7 +73,7 @@ export const pageQuery = graphql`
           frontmatter {
             date
             title
-            hero {
+            icon {
               publicURL
               ...galleryImage
             }
@@ -82,7 +82,7 @@ export const pageQuery = graphql`
       }
     }
     soft: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___order], order: ASC }
       filter: { fileAbsolutePath: { regex: "/soft/" } }
     ) {
       edges {
@@ -91,9 +91,9 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date
+            order
             title
-            hero {
+            icon {
               publicURL
               ...galleryImage
             }

@@ -15,6 +15,7 @@ const Video: React.SFC<Props> = ({ src }) => (
         width: '100%',
         height: '100%',
       }}
+      allow="autoplay; fullscreen"
       frameBorder="0"
       allowFullScreen
       webkitallowfullscreen="true"
