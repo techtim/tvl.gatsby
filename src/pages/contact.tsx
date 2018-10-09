@@ -18,7 +18,7 @@ const Contacts: React.SFC = () => (
         Contact me
       </Heading>
       <Box mb={4}>
-        <MailTo href="mailto:timvisuals@gmail.com">timvisuals@gmail.com</MailTo>
+        <MailTo href="mailto:tim@tvl.io">tim@tvl.io</MailTo>
       </Box>
       <ContactForm />
     </Box>
