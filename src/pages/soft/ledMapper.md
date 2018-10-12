@@ -31,7 +31,7 @@ Detailed interface description can be found at [ledMapper Wiki](https://github.c
 ### Controller
 
 Raspberry Pi (RPI) was chosen as the most accessible, cheap and multifunctional hardware around the world.
-It wasn't design to control LEDs ICs having 3.3V output signal when 5V recomended, but for 5V ICs it almost always work.
+It wasn't design to control LEDs ICs having 3.3V output signal when 5V recomended, but for 5V ICs it almost always work (without luck for 12V).
 
 To overcome this restriction and to protect RPI from wrong connection and short circuit, RPI shield was developed with following params:
 
@@ -46,10 +46,10 @@ To overcome this restriction and to protect RPI from wrong connection and short 
 
 ### Features in progress
 
-Project is in active development, now we developing:
+Project is in active development, currently in progress:
 
 - Autonomous Raspberry Pi version that loads saved to usb-flash project and plays it as you configured on computer
-- Raspberry Pi shield to raise controll signal voltage, add second DATA+CLOCK output and
+- Raspberry Pi shield to raise controll signal voltage, add second DATA+CLOCK output and phisical control with rotary encoder
 - Nice durable case for comfort installation
 - Art-Net protocol support
 

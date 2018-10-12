@@ -7,7 +7,7 @@ module.exports = {
     vimeo: 'https://vimeo.com/timtvl',
     fb: 'https://www.facebook.com/timvisuals/',
     youtube: 'https://www.youtube.com/channel/UCUMPgeNiY0WnSZCiyxHOquQ',
-    mainHeroSrc: 'https://player.vimeo.com/video/293953229?autoplay=1',
+    mainHeroSrc: 'https://player.vimeo.com/video/293953229?autoplay=1&title=0',
   },
   plugins: [
     {

@@ -2,7 +2,7 @@
 date: 13-06-2014
 title: Gipsy Club LED Light System
 icon: './gipsy/gipsy_title.jpg'
-videoHero: 'https://player.vimeo.com/video/112188907?title=0'
+videoHero: 'https://player.vimeo.com/video/112188907?title=0&autoplay=1'
 team: Tim Tavlinsev, SilaSveta, Anton Baturin
 place: Gipsy, Moscow, Russia
 ---
@@ -14,6 +14,7 @@ The project for Gipsy Club, produced in close collaboration with SilaSveta. Two 
 ###Technical details:
 
 - 1000 meters of addressable LED strips that were mounted inside lightboxes built right on the columns.
+- 4000 metes of copper cable 4 sq. mm
 - Custom OF software for LED mapping was developed to control all the LEDs.
 - Additional FFGL plugin for Resolume was developed to allow VJ control the light system in real-time and in sync with mapping projection.
 - 13 Raspberry Pi connected in the network, each Pi controls 60 meters of LED strips in each column( 1920 LEDs).
