@@ -2,7 +2,7 @@
 date: 1-10-2017
 title: Insight Bar
 place: Insight, Moscow, Russia
-videoHero: https://player.vimeo.com/video/85859601?title=0&autoplay=1
+hero: './insight/insight-bar.gif'
 icon: './insight/insight-354-bar-preview.jpg'
 ---
 
