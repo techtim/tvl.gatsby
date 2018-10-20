@@ -49,7 +49,7 @@ To overcome this restriction and to protect RPI from wrong connection and short 
 Project is in active development, currently in progress:
 
 - Autonomous Raspberry Pi version that loads saved to usb-flash project and plays it as you configured on computer
-- Raspberry Pi shield to raise controll signal voltage, add second DATA+CLOCK output and phisical control with rotary encoder
+- Raspberry Pi shield to raise controll signal voltage, add second DATA+CLOCK output and physical control with rotary encoder
 - Nice durable case for comfort installation
 - Art-Net protocol support
 
@@ -57,9 +57,9 @@ Project is in active development, currently in progress:
 
 Here you can download executables for Mac and PC and get image for Raspberry Pi to write it flash/sd card using Etcher for example:
 
-|                           OSX                            |                           WIN                            |                            RPI image                             |
-| :------------------------------------------------------: | :------------------------------------------------------: | :--------------------------------------------------------------: |
-| [.app V0.1](http://tvl.io/download/ledMapperOSX_0.1.zip) | [.exe V0.1](http://tvl.io/download/ledMapperWIN_0.1.zip) | [image V0.1](http://tvl.io/download/ledMapperTvl_Alpha_image.7z) |
+|                        OSX                        |                        WIN                        |                         RPI image                         |
+| :-----------------------------------------------: | :-----------------------------------------------: | :-------------------------------------------------------: |
+| [.app V0.1](../../downloads/ledMapperOSX_0.1.zip) | [.exe V0.1](../../downloads/ledMapperWIN_0.1.zip) | [image V0.1](../../downloads/ledMapperRPI3_image_0.1.zip) |
 
 ### Sources
 

@@ -18,6 +18,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'downloads',
+        path: `${__dirname}/src/downloads/`,
+        ignore: ['**/.*'], // ignore files starting with a dot
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
