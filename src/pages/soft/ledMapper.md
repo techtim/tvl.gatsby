@@ -48,14 +48,14 @@ To overcome this restriction and to protect RPI from wrong connection and short 
 
 Project is in active development, currently in progress:
 
-- Autonomous Raspberry Pi version that loads saved to usb-flash project and plays it as you configured on computer
+- Autonomous Raspberry Pi version that loads a project from usb-flash and plays it as was configured on a computer
 - Raspberry Pi shield to raise controll signal voltage, add second DATA+CLOCK output and physical control with rotary encoder
 - Nice durable case for comfort installation
 - Art-Net protocol support
 
 ### Downloads
 
-Here you can download executables for Mac and PC and get image for Raspberry Pi to write it flash/sd card using Etcher for example:
+Here you can download executables for Mac and PC and get image for Raspberry Pi to write it flash/sd card using [Etcher](https://etcher.io/):
 
 |                        OSX                        |                        WIN                        |                         RPI image                         |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-------------------------------------------------------: |
