@@ -26,7 +26,7 @@ Developed based on many years of experience of mapping and control digital LEDs
 
 ![ledMapper Interface](./ledmapper/ledMapper_screenshot.png)
 
-Detailed interface description can be found at [ledMapper Wiki](https://github.com/techtim/ledMapper/wiki/ledMapper-Interface).
+Detailed interface description and starters guide can be found at [ledMappers Wiki](https://github.com/techtim/ledMapper/wiki).
 
 ### Controller
 
