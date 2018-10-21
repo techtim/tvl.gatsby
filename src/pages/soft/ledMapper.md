@@ -55,7 +55,7 @@ Project is in active development, currently in progress:
 
 ### Downloads
 
-Here you can download executables for Mac and PC and get image for Raspberry Pi to write it flash/sd card using [Etcher](https://etcher.io/):
+Here you can download executables for Mac and PC and get image for Raspberry Pi to write it SD card using [Etcher](https://etcher.io/):
 
 |                        OSX                        |                        WIN                        |                         RPI image                         |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-------------------------------------------------------: |
@@ -64,6 +64,6 @@ Here you can download executables for Mac and PC and get image for Raspberry Pi 
 ### Sources
 
 ledMapper is open-source licensed under the GNU General Public License v2.0.
-All source files can be found on [ledMapper github page](https://github.com/techtim/ledMapper)
+All source files can be found on [ledMapper github page](https://github.com/techtim/ledMapper).
 
 ![led Mapper icon](./ledmapper/ledMapper_icon_200.png)
