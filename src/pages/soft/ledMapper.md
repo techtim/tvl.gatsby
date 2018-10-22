@@ -53,6 +53,71 @@ Project is in active development, currently in progress:
 - Nice durable case for comfort installation
 - Art-Net protocol support
 
+### Subscribe for updates
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'/>
+
+<div id='byard-emailsubsocial'>
+<div class='emailsub'>
+<form name="subscribe" method="POST" netlify>
+<input type='text' name='email' placeholder='Your Email' />
+<input value="Subscribe" class="button" type="submit" />
+</form>
+</div>
+</div>
+
+<style type='text/css'>
+#byard-emailsubsocial {
+width: 100%;
+display: block;
+padding: 0 auto;
+}
+#byard-emailsubsocial .heading {
+padding: 0rem 5rem;
+line-height: 35px;
+font-size: 26px;
+color: rgb(170, 170, 170);
+text-align: center;
+text-shadow: 0px 1px rgba(255, 255, 255, 0.75);
+background: none repeat scroll 0% 0% rgb(247, 247, 247);
+}
+#byard-emailsubsocial .emailsub {
+padding: 0 2rem 1rem 2rem;
+}
+#byard-emailsubsocial .emailsub input {
+color: rgb(170, 170, 170);
+padding: 0.8rem;
+margin-top: 1rem;
+margin-left: 2.5rem;
+font-size: 1rem;
+width: 80%;
+border: 1px solid #ccc;
+border-bottom: 2px solid #ccc;
+border-radius: 5px;
+transition:border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
+}
+#byard-emailsubsocial .emailsub input:focus {
+border-color:#33614E;
+outline: none;
+box-shadow: 0 0 2px 1px #3  3614E;
+}
+#byard-emailsubsocial .emailsub .button {
+background: #6f32d1;
+color: white!important;
+border:none;
+outline: none;
+border-bottom: 3px solid #f12a1;
+transition:background .4s linear;
+width: 80%;
+margin-left: 2.5rem;
+font-weight: 600;
+cursor:pointer;
+}
+#byard-emailsubsocial .emailsub .button:hover{
+background: #8f52f1;
+}
+</style>
+
 ### Downloads
 
 Here you can download executables for Mac and PC and get image for Raspberry Pi to write it SD card using [Etcher](https://etcher.io/):
