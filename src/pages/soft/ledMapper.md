@@ -1,7 +1,7 @@
 ---
 title: ledMapper
 icon: './ledmapper/LedMapper_preview.png'
-videoHero: https://player.vimeo.com/video/293953229?title=0&autoplay=1
+videoHero: https://player.vimeo.com/video/293953229?title=0&autoplay=1&muted=1
 order: 1
 ---
 
@@ -55,13 +55,11 @@ Project is in active development, currently in progress:
 
 ### Subscribe for updates
 
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'/>
-
 <div id='byard-emailsubsocial'>
 <div class='emailsub'>
-<form name="subscribe" method="POST" netlify>
+<form name="subscribe" method="post" netlify>
 <input type='text' name='email' placeholder='Your Email' />
-<input value="Subscribe" class="button" type="submit" />
+<button class="button" type="submit">Subscribe</button>
 </form>
 </div>
 </div>
@@ -72,25 +70,12 @@ width: 100%;
 display: block;
 padding: 0 auto;
 }
-#byard-emailsubsocial .heading {
-padding: 0rem 5rem;
-line-height: 35px;
-font-size: 26px;
-color: rgb(170, 170, 170);
-text-align: center;
-text-shadow: 0px 1px rgba(255, 255, 255, 0.75);
-background: none repeat scroll 0% 0% rgb(247, 247, 247);
-}
-#byard-emailsubsocial .emailsub {
-padding: 0 2rem 1rem 2rem;
-}
 #byard-emailsubsocial .emailsub input {
 color: rgb(170, 170, 170);
 padding: 0.8rem;
-margin-top: 1rem;
 margin-left: 2.5rem;
 font-size: 1rem;
-width: 80%;
+width: 40%;
 border: 1px solid #ccc;
 border-bottom: 2px solid #ccc;
 border-radius: 5px;
@@ -106,11 +91,13 @@ background: #6f32d1;
 color: white!important;
 border:none;
 outline: none;
+padding: 0.8rem;
+border-radius: 5px;
+font-size: 1rem;
 border-bottom: 3px solid #f12a1;
 transition:background .4s linear;
-width: 80%;
-margin-left: 2.5rem;
-font-weight: 600;
+width: 40%;
+margin-right: 2.5rem;
 cursor:pointer;
 }
 #byard-emailsubsocial .emailsub .button:hover{

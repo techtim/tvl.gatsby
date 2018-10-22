@@ -2,7 +2,7 @@
 date: 13-06-2014
 title: Gipsy Club LED Light System
 icon: './gipsy/gipsy_title.jpg'
-videoHero: 'https://player.vimeo.com/video/112188907?title=0&autoplay=1'
+videoHero: 'https://player.vimeo.com/video/112188907?title=0&autoplay=1&muted=1'
 team: Tim Tavlinsev, SilaSveta, Anton Baturin
 place: Gipsy, Moscow, Russia
 ---

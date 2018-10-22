@@ -2,7 +2,7 @@
 date: 12-10-2013
 title: Icosahedron
 place: Arma17, Moscow, Russia
-videoHero: https://player.vimeo.com/video/86767184?title=0&autoplay=1
+videoHero: https://player.vimeo.com/video/86767184?title=0&autoplay=1&muted=1
 icon: './icosahedron/icosahedron-blue.jpg'
 team: Tim Tavlinsev, Anton Podkopaev
 ---
