@@ -56,12 +56,10 @@ Project is in active development, currently in progress:
 ### Subscribe for updates
 
 <div id='byard-emailsubsocial'>
-<div class='emailsub'>
-<form name="subscribe" method="post" netlify>
+<form name="subscribe" method="POST" action="/success" netlify>
 <input type='text' name='email' placeholder='Your Email' />
-<button class="button" type="submit">Subscribe</button>
+<button type="submit">Subscribe</button>
 </form>
-</div>
 </div>
 
 <style type='text/css'>
@@ -70,7 +68,7 @@ width: 100%;
 display: block;
 padding: 0 auto;
 }
-#byard-emailsubsocial .emailsub input {
+#byard-emailsubsocial input {
 color: rgb(170, 170, 170);
 padding: 0.8rem;
 margin-left: 2.5rem;
@@ -81,12 +79,12 @@ border-bottom: 2px solid #ccc;
 border-radius: 5px;
 transition:border 0.15s linear 0s, box-shadow 0.15s linear 0s, color 0.15s linear 0s;
 }
-#byard-emailsubsocial .emailsub input:focus {
+#byard-emailsubsocial input:focus {
 border-color:#33614E;
 outline: none;
 box-shadow: 0 0 2px 1px #3  3614E;
 }
-#byard-emailsubsocial .emailsub .button {
+#byard-emailsubsocial button {
 background: #6f32d1;
 color: white!important;
 border:none;
@@ -100,7 +98,7 @@ width: 40%;
 margin-right: 2.5rem;
 cursor:pointer;
 }
-#byard-emailsubsocial .emailsub .button:hover{
+#byard-emailsubsocial button:hover{
 background: #8f52f1;
 }
 </style>
