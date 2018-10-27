@@ -73,7 +73,7 @@ export default class Card extends React.Component<Props> {
     return (
       <Link style={{ boxShadow: 'none' }} to={to}>
         <Relative>
-          <Image src={image} alt={title} title={title} />
+          <Image src={image} alt={title} />
           <Overlay
             bg={this.state.preview ? 'overlay' : undefined}
             onPointerEnter={this.onEnter}

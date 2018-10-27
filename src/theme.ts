@@ -28,9 +28,7 @@ export const colors = {
 
 /// styles for style component
 export default {
-  fonts: {
-    sans: '"Maven Pro", sans-serif',
-  },
+  font: '"Maven Pro", sans-serif',
 
   fontWeights: {
     medium: 400,

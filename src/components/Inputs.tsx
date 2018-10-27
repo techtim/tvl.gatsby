@@ -1,25 +1,19 @@
 import React from 'react'
 import { FieldProps } from 'formik'
 import styled from 'styled-components'
-import {
-  Text,
-  Textarea as _Textarea,
-  Input as _Input,
-  Box,
-  Button,
-} from 'rebass'
+import { Text, Box, Button } from 'rebass'
 
 export interface RebassFieldProps extends FieldProps {
   component: React.ComponentType
 }
 
-export const Input: any = styled(_Input).attrs({
+export const Input: any = styled.input.attrs({
   boxShadow: 'none',
   borderRadius: 0,
   px: 3,
 })``
 
-export const Textarea: any = styled(_Textarea).attrs({
+export const Textarea: any = styled.textarea.attrs({
   boxShadow: 'none',
   borderRadius: 0,
   px: 3,

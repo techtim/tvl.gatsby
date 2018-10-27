@@ -1,6 +1,6 @@
 import React from 'react'
 import { Field, Form, Formik } from 'formik'
-import { Textarea as _Textarea, Input as _Input, Flex, Box } from 'rebass'
+import { Flex, Box } from 'rebass'
 import { Submit, Textarea, RebassField } from './Inputs'
 
 interface FormFields {
