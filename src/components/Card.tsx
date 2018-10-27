@@ -1,20 +1,15 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { Image, Text } from 'rebass'
-import { Relative, Absolute } from './Position'
+import { Image, Text, Box, Flex } from 'rebass'
 import styled from 'styled-components'
 
-const Overlay = styled(Absolute).attrs<any>({
-  top: 0,
-  right: 0,
-  bottom: 0,
-  left: 0,
-})`
+const Overlay = styled(Flex)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   transition: background-color 0.1s ease-out;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `
 
 interface TitleProps {
@@ -72,18 +67,20 @@ export default class Card extends React.Component<Props> {
 
     return (
       <Link style={{ boxShadow: 'none' }} to={to}>
-        <Relative>
+        <Box css={{ position: 'relative' }}>
           <Image src={image} alt={title} />
           <Overlay
             bg={this.state.preview ? 'overlay' : undefined}
             onPointerEnter={this.onEnter}
             onPointerLeave={this.onLeave}
+            justifyContent="center"
+            alignItems="center"
           >
             <Title color="white" fontSize={5} preview={this.state.preview}>
               {title}
             </Title>
           </Overlay>
-        </Relative>
+        </Box>
       </Link>
     )
   }
