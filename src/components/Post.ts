@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
+import { Box } from 'rebass'
 
-const Post = styled.div`
-  color: ${themeGet('colors.midGrey')};
+const Post = styled(Box)`
   font-weight: 300;
 
   /* Add padding for text on small screens */
@@ -74,5 +74,9 @@ const Post = styled.div`
     }
   }
 `
+
+Post.defaultProps = {
+  color: 'midGrey',
+}
 
 export default Post

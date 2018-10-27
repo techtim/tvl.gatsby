@@ -3,8 +3,10 @@ import React from 'react'
 import Media from 'react-media'
 import { Box, Flex, Image, Text } from 'rebass'
 import styled from 'styled-components'
-// @ts-ignore
-import { themeGet, defaultBreakpoints } from 'styled-system'
+import { themeGet } from 'styled-system'
+import theme from '../../theme'
+
+const [, medium] = theme.breakpoints
 
 import Social from './Social'
 import burger from './burger.svg'
@@ -72,7 +74,7 @@ export default class Header extends React.Component<{}, State> {
 
     return (
       <header>
-        <Media query={{ maxWidth: defaultBreakpoints[1] }}>
+        <Media query={{ maxWidth: medium }}>
           {(mobile: boolean) =>
             mobile ? (
               <>
