@@ -1,16 +1,20 @@
 import styled from 'styled-components'
 import { themeGet } from 'styled-system'
+import { Box } from 'rebass'
+import theme from '../theme'
 
-const Post = styled.div`
-  color: ${themeGet('colors.midGrey')};
+const [small, medium] = theme.breakpoints
+
+const Post = styled(Box)`
   font-weight: 300;
+  color: ${themeGet('colors.midGrey')};
 
   /* Add padding for text on small screens */
   & > p,
   & > h1,
   & > h2,
   & > h3 {
-    @media only screen and (max-width: 32em) {
+    @media only screen and (max-width: ${medium}) {
       padding: 0 16px;
     }
   }
@@ -21,8 +25,17 @@ const Post = styled.div`
 
     /* Pull images aside to be full width on small screens */
     & a.gatsby-resp-image-link {
-      @media only screen and (max-width: 32em) {
-        margin: 0 -16px;
+      &:first-child {
+        margin-top: 32px;
+      }
+
+      &:last-child {
+        margin-bottom: 32px;
+      }
+
+      @media only screen and (max-width: ${small}) {
+        margin-left: -16px;
+        margin-right: -16px;
       }
     }
   }

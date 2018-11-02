@@ -45,19 +45,19 @@ const BlogPostTemplate: React.SFC<Props> = ({
         <Heading
           fontSize={4}
           fontWeight="regular"
-          as="header"
+          lineHeight={20 / 16}
           // style={{ textTransform: 'lowercase' }}
         >
           {title}
         </Heading>
 
         {team ? (
-          <Text is="div" color="suvaGray" fontWeight={500} mt={1}>
+          <Text as="div" color="suvaGray" fontWeight={500} mt={1}>
             Team: {team}
           </Text>
         ) : null}
 
-        <Text is="div" color="suvaGray" mt={1} fontWeight={500}>
+        <Text as="div" color="suvaGray" mt={1} fontWeight={500}>
           <time>{date}</time>
           {place ? `, ${place}` : null}
         </Text>

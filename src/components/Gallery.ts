@@ -1,14 +1,13 @@
 import styled from 'styled-components'
 import { Box } from 'rebass'
-// @ts-ignore
-import { createMediaQuery, defaultBreakpoints } from 'styled-system'
+import theme from '../theme'
 
-const [, medium] = defaultBreakpoints
+const [, medium] = theme.breakpoints
 
 const Gallery = styled(Box)`
   display: grid;
 
-  ${createMediaQuery(medium)} {
+  @media screen and (min-width: ${medium}) {
     column-gap: 46px;
     row-gap: 54px;
     grid-template-columns: repeat(2, minmax(350px, 1fr));

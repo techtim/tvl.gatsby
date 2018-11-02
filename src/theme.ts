@@ -28,9 +28,8 @@ export const colors = {
 
 /// styles for style component
 export default {
-  fonts: {
-    sans: '"Maven Pro", sans-serif',
-  },
+  breakpoints: ['40em', '52em', '64em'],
+  font: '"Maven Pro", sans-serif',
 
   fontWeights: {
     medium: 400,

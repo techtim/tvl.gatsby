@@ -28,19 +28,19 @@ const Social: React.SFC = () => (
       <Flex flex="1 0 auto" mt="auto">
         <Inline mr={1}>
           <a href={site.siteMetadata.fb} target="_blank">
-            <Image src={fb} width={24} />
+            <Image src={fb} width={24} alt="Facebook" />
           </a>
         </Inline>
 
         <Inline mr={2}>
           <a href={site.siteMetadata.vimeo} target="_blank">
-            <Image src={vimeo} width={24} />
+            <Image src={vimeo} width={24} alt="Vimeo" />
           </a>
         </Inline>
 
         <Inline>
           <a href={site.siteMetadata.youtube} target="_blank">
-            <Image src={youtube} width={24} />
+            <Image src={youtube} width={24} alt="YouTube" />
           </a>
         </Inline>
       </Flex>
