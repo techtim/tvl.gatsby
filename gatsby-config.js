@@ -54,7 +54,16 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: 'UA-73333824-2',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: {
+          '/*': ['cache-control: public, max-age=0, must-revalidate'],
+          '/static': ['cache-control: public, max-age=31536000,immutable'],
+        },
       },
     },
     'gatsby-plugin-typescript',
