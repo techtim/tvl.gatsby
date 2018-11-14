@@ -109,7 +109,7 @@ Here you can download executables for Mac and PC and get image for Raspberry Pi 
 
 |                        OSX                        |                        WIN                        |                         RPI image                         |
 | :-----------------------------------------------: | :-----------------------------------------------: | :-------------------------------------------------------: |
-| [.app V0.2](../../downloads/ledMapperOSX_0.2.zip) | [.exe V0.2](../../downloads/ledMapperWIN_0.2.zip) | [image 0.2](../../downloads/ledMapperRPI3_image_0.2.zip) |
+| [.app V0.2](../../downloads/ledMapperOSX_0.2.zip) | [.exe V0.2](../../downloads/ledMapperWIN_0.2.zip) | [image 0.2](../../downloads/ledMapperRPI3_image_0.3.zip) |
 
 ### Sources
 
