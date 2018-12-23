@@ -6,7 +6,7 @@ import theme from '../theme'
 const [small, medium] = theme.breakpoints
 
 const Post = styled(Box)`
-  font-weight: 300;
+  font-weight: ${themeGet('fontWeights.regular')};
   color: ${themeGet('colors.midGrey')};
 
   /* Add padding for text on small screens */
@@ -19,9 +19,14 @@ const Post = styled(Box)`
     }
   }
 
+  & > h2,
+  & > h3 {
+    margin: 32px 0 16px;
+  }
+
   & p {
-    margin: 0.7rem 0 0.7rem 0;
-    line-height: 1.25;
+    margin: 0.8rem 0;
+    line-height: ${themeGet('lineHeights.0')};
 
     /* Pull images aside to be full width on small screens */
     & a.gatsby-resp-image-link {
@@ -49,14 +54,14 @@ const Post = styled(Box)`
   }
 
   & a {
-    color: #51b5e4;
+    color: ${themeGet('colors.lightBlue')};
     font-style: normal;
   }
 
   & h3 {
     font-style: normal;
-    font-weight: 400;
-    color: #000000;
+    font-weight: ${themeGet('fontWeights.medium')};
+    color: ${themeGet('colors.black')};
   }
 
   & table {
@@ -68,18 +73,13 @@ const Post = styled(Box)`
     margin: 0 auto;
 
     & th {
-      font-weight: bold;
+      font-weight: ${themeGet('fontWeights.semibold')};
     }
 
     & th,
     & td {
-      border: 1px solid #ddd;
+      border: 1px solid ${themeGet('colors.silver')};
       padding: 6px 13px;
-    }
-
-    & tr {
-      border-top: 1px solid #ccc;
-      background-color: ${themeGet('colors.white')};
     }
 
     & tr:nth-child(2n) {

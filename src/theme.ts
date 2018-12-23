@@ -12,12 +12,13 @@ export const colors = {
   // text
   suvaGray: '#8a8484',
   gray: '#828282',
-  // skeletons silver: '#c4c4c4',
+  silver: '#c4c4c4',
   suvaGrey2: '#8c8989',
   lightGray: '#f8f8f8',
   midGrey: '#5d5b59',
 
   // colors
+  lightBlue: '#347892',
   seagul: '#56ccf2',
   powderBlue: '#b9e6ea',
   halfBaked: 'rgba(133, 202, 213, 0.84)',
@@ -32,9 +33,12 @@ export default {
   font: '"Maven Pro", sans-serif',
 
   fontWeights: {
-    medium: 400,
     regular: 300,
+    medium: 400,
+    semibold: 500,
   },
+
+  lineHeights: [1.4, 1.66],
 
   colors,
 

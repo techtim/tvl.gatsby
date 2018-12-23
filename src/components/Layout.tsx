@@ -35,8 +35,8 @@ const Layout: React.SFC<Props> = ({ children, hero }) => (
       </Container>
 
       <Box as="footer" width="100%" pt={5} mb={3} px={[3, 4]} mt="auto">
-        <Text fontSize={0} color="gray">
-          ⓒ TVL {new Date().getFullYear()}
+        <Text fontSize={0} color="midGray">
+          ⓒ TVL <time>{new Date().getFullYear()}</time>
         </Text>
       </Box>
     </Flex>

@@ -41,23 +41,24 @@ const BlogPostTemplate: React.SFC<Props> = ({
     <Helmet title={`${title} | ${siteTitle}`} />
 
     <article>
-      <Box as="section" px={[3, 3, 4]}>
-        <Heading
-          fontSize={4}
-          fontWeight="regular"
-          lineHeight={20 / 16}
-          // style={{ textTransform: 'lowercase' }}
-        >
+      <Box as="section" px={[3, 3, 0]}>
+        <Heading fontSize={4} fontWeight="semibold" lineHeight={1}>
           {title}
         </Heading>
 
         {team ? (
-          <Text as="div" color="suvaGray" fontWeight={500} mt={1}>
+          <Text
+            as="div"
+            color="suvaGray"
+            fontWeight={500}
+            mt={1}
+            lineHeight={1}
+          >
             Team: {team}
           </Text>
         ) : null}
 
-        <Text as="div" color="suvaGray" mt={1} fontWeight={500}>
+        <Text as="div" color="suvaGray" mt={1} fontWeight={500} lineHeight={1}>
           <time>{date}</time>
           {place ? `, ${place}` : null}
         </Text>

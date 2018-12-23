@@ -96,7 +96,10 @@ export default class Header extends React.Component<{}, State> {
                         <Image src={logo} width={108} alt="TVL" />
                       </Link>
                       <Box onClick={this.onToggle}>
-                        <Image src={isOpened ? cross : burger} />
+                        <Image
+                          src={isOpened ? cross : burger}
+                          alt="Toggle navigation menu"
+                        />
                       </Box>
                     </Flex>
                     {/* TODO: aria */}
@@ -126,7 +129,7 @@ export default class Header extends React.Component<{}, State> {
               >
                 <Box mr={4} flex="0 0 auto">
                   <Link to="/">
-                    <Image src={logo} width={160} />
+                    <Image src={logo} width={160} alt="TVL" />
                   </Link>
                 </Box>
                 <Flex>

@@ -76,7 +76,12 @@ export default class Card extends React.Component<Props> {
             justifyContent="center"
             alignItems="center"
           >
-            <Title color="white" fontSize={5} preview={this.state.preview}>
+            <Title
+              color="white"
+              fontSize={5}
+              preview={this.state.preview}
+              textAlign="center"
+            >
               {title}
             </Title>
           </Overlay>
