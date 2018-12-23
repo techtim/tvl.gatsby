@@ -91,7 +91,6 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            order
             title
             icon {
               publicURL
