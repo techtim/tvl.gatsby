@@ -3,15 +3,15 @@ import React from 'react'
 import Media from 'react-media'
 import { Box, Flex, Image, Text } from 'rebass'
 import styled from 'styled-components'
-import { themeGet } from 'styled-system'
+
 import theme from '../../theme'
-
-const [, medium] = theme.breakpoints
-
 import Social from './Social'
 import burger from './burger.svg'
 import cross from './cross.svg'
 import logo from './tvl-top-logo.png'
+
+const { colors, breakpoints } = theme
+const [, medium] = breakpoints
 
 const Menu = styled(Flex)`
   min-height: 100vh;
@@ -33,7 +33,7 @@ const NavLink = styled(Link).attrs({
 })`
   text-decoration: none;
   text-underline-position: under;
-  color: ${themeGet('colors.black', 'black')};
+  color: ${colors.black};
   text-transform: uppercase;
 
   &.${activeClassName} {
@@ -54,8 +54,7 @@ interface BackgroundProps {
 
 // using background-image or background hence separate component and not Box
 const Background = styled.div<BackgroundProps>`
-  background: ${({ isOpened }) =>
-    themeGet(isOpened ? 'gradient' : 'colors.white', 'white')};
+  background: ${({ isOpened }) => (isOpened ? theme.gradient : colors.white)};
 `
 
 interface State {

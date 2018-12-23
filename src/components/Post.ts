@@ -1,13 +1,17 @@
 import styled from 'styled-components'
-import { themeGet } from 'styled-system'
 import { Box } from 'rebass'
 import theme from '../theme'
 
-const [small, medium] = theme.breakpoints
+const {
+  colors,
+  fontWeights,
+  lineHeights,
+  breakpoints: [small, medium],
+} = theme
 
 const Post = styled(Box)`
-  font-weight: ${themeGet('fontWeights.regular')};
-  color: ${themeGet('colors.midGrey')};
+  font-weight: ${fontWeights.regular};
+  color: ${colors.midGrey};
 
   /* Add padding for text on small screens */
   & > p,
@@ -26,7 +30,7 @@ const Post = styled(Box)`
 
   & p {
     margin: 0.8rem 0;
-    line-height: ${themeGet('lineHeights.0')};
+    line-height: ${lineHeights[0]};
 
     /* Pull images aside to be full width on small screens */
     & a.gatsby-resp-image-link {
@@ -46,7 +50,7 @@ const Post = styled(Box)`
   }
 
   & strong {
-    color: ${themeGet('colors.midGrey')};
+    color: ${colors.midGrey};
   }
 
   & li {
@@ -54,14 +58,14 @@ const Post = styled(Box)`
   }
 
   & a {
-    color: ${themeGet('colors.lightBlue')};
+    color: ${colors.lightBlue};
     font-style: normal;
   }
 
   & h3 {
     font-style: normal;
-    font-weight: ${themeGet('fontWeights.medium')};
-    color: ${themeGet('colors.black')};
+    font-weight: ${fontWeights.medium};
+    color: ${colors.black};
   }
 
   & table {
@@ -73,17 +77,17 @@ const Post = styled(Box)`
     margin: 0 auto;
 
     & th {
-      font-weight: ${themeGet('fontWeights.semibold')};
+      font-weight: ${fontWeights.semibold};
     }
 
     & th,
     & td {
-      border: 1px solid ${themeGet('colors.silver')};
+      border: 1px solid ${colors.silver};
       padding: 6px 13px;
     }
 
     & tr:nth-child(2n) {
-      background-color: ${themeGet('colors.lightGray')};
+      background-color: ${colors.lightGray};
     }
   }
 `

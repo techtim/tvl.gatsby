@@ -24,25 +24,23 @@
     "gatsby-transformer-sharp": "^2.1.1",
     "lodash.get": "^4.4.2",
     "prismjs": "^1.15.0",
-    "react": "^16.5.2",
+    "react": "^16.7.0",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "react-media": "^1.8.0",
-    "rebass": "^3.0.0-9",
+    "rebass": "^3.0.0",
     "serve": "^10.0.1",
-    "styled-components": "^4.0.2",
-    "styled-system": "^3.1.11",
+    "styled-components": "^4.1.3",
     "typeface-maven-pro": "^0.0.54"
   },
   "devDependencies": {
     "@types/lodash.get": "^4.4.4",
     "@types/node": "^10.10.3",
-    "@types/react": "^16.4.14",
+    "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.7",
     "@types/react-helmet": "^5.0.7",
-    "@types/styled-components": "^4.0.3",
-    "@types/styled-system": "^3.0.5",
-    "babel-plugin-styled-components": "^1.8.0",
+    "@types/styled-components": "^4.1.4",
+    "babel-plugin-styled-components": "^1.10.0",
     "gatsby-plugin-styled-components": "^3.0.1",
     "husky": "^1.2.1",
     "lint-staged": "^8.1.0",
@@ -70,6 +68,9 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx,js,md,json,mdx}": ["prettier --write", "git add"]
+    "*.{ts,tsx,js,md,json,mdx}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

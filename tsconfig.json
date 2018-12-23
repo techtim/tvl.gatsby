@@ -18,8 +18,7 @@
     "listFiles": false,
     "pretty": true,
     "lib": ["es2017", "dom"],
-    "types": ["node"],
-    "typeRoots": ["node_modules/@types", "src/types"]
+    "types": ["node"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules/**"],

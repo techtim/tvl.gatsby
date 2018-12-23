@@ -38,7 +38,7 @@ const fontWeights = {
 export type FontWeights = keyof typeof fontWeights
 
 /// styles for style component
-export default {
+const theme = {
   breakpoints: [640, 832, 1024],
   font: '"Maven Pro", sans-serif',
 
@@ -52,3 +52,7 @@ export default {
     colors.tickleMePink
   } 58.01%, ${colors.ripeLemon} 97.79%)`,
 }
+
+export type Theme = typeof theme
+
+export default theme
