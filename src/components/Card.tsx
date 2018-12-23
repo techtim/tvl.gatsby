@@ -1,30 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import { Image, Text, Box, Flex } from 'rebass'
-import styled from 'styled-components'
-
-const Overlay = styled(Flex)`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: background-color 0.1s ease-out;
-`
-
-interface TitleProps {
-  preview: boolean
-  [index: string]: any
-}
-
-const Title = styled(({ preview, ...props }: TitleProps) => (
-  <Text {...props} />
-))`
-  transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
-  // for a11y
-  visibility: ${({ preview }) => (preview ? 'visible' : 'hidden')};
-  opacity: ${({ preview }) => (preview ? 1 : 0)};
-`
 
 interface Props {
   to: string
@@ -64,27 +40,40 @@ export default class Card extends React.Component<Props> {
 
   render() {
     const { to, image, title } = this.props
+    const { preview } = this.state
 
     return (
       <Link style={{ boxShadow: 'none' }} to={to}>
         <Box css={{ position: 'relative' }}>
           <Image src={image} alt={title} />
-          <Overlay
+          <Flex
             bg={this.state.preview ? 'overlay' : undefined}
             onPointerEnter={this.onEnter}
             onPointerLeave={this.onLeave}
             justifyContent="center"
             alignItems="center"
+            css={`
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              transition: background-color 0.1s ease-out;
+            `}
           >
-            <Title
+            <Text
               color="white"
               fontSize={5}
-              preview={this.state.preview}
               textAlign="center"
+              css={`
+                transition: visibility 0.1s ease-out, opacity 0.1s ease-out;
+                visibility: ${preview ? 'visible' : 'hidden'};
+                opacity: ${preview ? 1 : 0};
+              `}
             >
               {title}
-            </Title>
-          </Overlay>
+            </Text>
+          </Flex>
         </Box>
       </Link>
     )
