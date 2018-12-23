@@ -55,7 +55,7 @@ interface BackgroundProps {
 // using background-image or background hence separate component and not Box
 const Background = styled.div<BackgroundProps>`
   background: ${({ isOpened }) =>
-    themeGet(isOpened ? 'gradients.main' : 'colors.white', 'white')};
+    themeGet(isOpened ? 'gradient' : 'colors.white', 'white')};
 `
 
 interface State {

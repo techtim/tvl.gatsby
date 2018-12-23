@@ -27,24 +27,28 @@ export const colors = {
   overlay: 'rgba(12, 11, 11, 0.5)',
 }
 
+export type Colors = keyof typeof colors
+
+const fontWeights = {
+  regular: 300,
+  medium: 400,
+  semibold: 500,
+}
+
+export type FontWeights = keyof typeof fontWeights
+
 /// styles for style component
 export default {
-  breakpoints: ['40em', '52em', '64em'],
+  breakpoints: [640, 832, 1024],
   font: '"Maven Pro", sans-serif',
 
-  fontWeights: {
-    regular: 300,
-    medium: 400,
-    semibold: 500,
-  },
+  fontWeights,
 
   lineHeights: [1.4, 1.66],
 
   colors,
 
-  gradients: {
-    main: `linear-gradient(180deg, ${colors.halfBaked} 15.47%, ${
-      colors.tickleMePink
-    } 58.01%, ${colors.ripeLemon} 97.79%)`,
-  },
+  gradient: `linear-gradient(180deg, ${colors.halfBaked} 15.47%, ${
+    colors.tickleMePink
+  } 58.01%, ${colors.ripeLemon} 97.79%)`,
 }
