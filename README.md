@@ -1,12 +1,16 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+# TVL
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+Stack is: `gatbsy` + TypeScript + `rebass` + `styled-components`
 
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+## Run
 
-## Running in development
-`gatsby develop`
+    yarn develop
 
+## Build and serve
 
-Image proportion in lists 600x358
+    yarn build
+    yarn start
+
+## Design system
+
+Go to `/style` in dev mode
