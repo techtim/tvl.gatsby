@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Heading, Text, Box } from 'rebass'
-import ContactForm from '../components/ContactForm'
 import Layout from '../components/Layout'
 
 const MailTo = styled(Text).attrs<any>({ as: 'a', color: 'gray' })`
@@ -20,7 +19,6 @@ const Contacts: React.SFC = () => (
       <Box mb={4}>
         <MailTo href="mailto:tim@tvl.io">tim@tvl.io</MailTo>
       </Box>
-      {/* <ContactForm /> */}
     </Box>
   </Layout>
 )

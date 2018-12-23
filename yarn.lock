@@ -12187,6 +12187,11 @@ typeface-maven-pro@^0.0.54:
   resolved "https://registry.yarnpkg.com/typeface-maven-pro/-/typeface-maven-pro-0.0.54.tgz#7ef991257cf53c0fa75142d2aefcddcbd867ff7c"
   integrity sha512-zUHMT+9uYgiVIEJcXb8FWcVfXYdm3I50ovA7uF+9w3E82hrcInR3cwrgUTao8M3916xYiYwuOSPxBJ9hVVRPUA==
 
+typescript@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.2.tgz#fe8101c46aa123f8353523ebdcf5730c2ae493e5"
+  integrity sha512-VCj5UiSyHBjwfYacmDuc/NOk4QQixbE+Wn7MFJuS0nRuPQbof132Pw4u53dm264O8LPc2MVsc7RJNml5szurkg==
+
 ua-parser-js@^0.7.18:
   version "0.7.18"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.18.tgz#a7bfd92f56edfb117083b69e31d2aa8882d4b1ed"

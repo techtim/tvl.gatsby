@@ -47,13 +47,15 @@
     "prettier": "^1.14.3",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
-    "tslint-react": "^3.6.0"
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2"
   },
   "scripts": {
     "develop": "gatsby develop",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gatsby build",
-    "start": "serve public"
+    "start": "serve public",
+    "typecheck": "tsc --noEmit"
   },
   "prettier": {
     "semi": false,

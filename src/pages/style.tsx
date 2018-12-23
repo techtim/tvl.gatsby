@@ -3,7 +3,6 @@ import { navigate } from 'gatsby'
 import { Box, Flex, Text, Heading } from 'rebass'
 import theme, { Colors, FontWeights } from '../theme'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
-import { themeGet } from 'styled-system'
 
 const GlobalStyle = createGlobalStyle`
   body, p {

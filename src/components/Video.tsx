@@ -18,8 +18,11 @@ const Video: React.SFC<Props> = ({ src }) => (
       allow="autoplay; fullscreen"
       frameBorder="0"
       allowFullScreen
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
+      // XXX: typescript is not happy about those
+      {...{
+        webkitallowfullscreen: true,
+        mozallowfullscreen: true,
+      }}
     />
   </div>
 )
