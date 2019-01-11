@@ -7,7 +7,7 @@ const [, medium] = theme.breakpoints
 const Gallery = styled(Box)`
   display: grid;
 
-  @media screen and (min-width: ${medium}) {
+  @media screen and (min-width: ${medium}px) {
     column-gap: 46px;
     row-gap: 54px;
     grid-template-columns: repeat(2, minmax(350px, 1fr));
