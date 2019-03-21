@@ -12,31 +12,8 @@ interface State {
   preview: boolean
 }
 
-export default class Card extends React.Component<Props> {
+export default class Card extends React.Component<Props, State> {
   state: State = { preview: false }
-  timer: any
-
-  onEnter: React.PointerEventHandler<HTMLImageElement> = e => {
-    if (e.pointerType === 'mouse') {
-      this.setState({ preview: true })
-    } else {
-      if (this.timer) clearTimeout(this.timer)
-
-      this.timer = setTimeout(() => {
-        this.setState({ preview: true })
-      }, 300)
-    }
-  }
-
-  onLeave: React.PointerEventHandler<HTMLImageElement> = e => {
-    if (this.timer) e.preventDefault()
-
-    this.setState({ preview: false })
-  }
-
-  componentWillUnmount() {
-    this.timer && clearTimeout(this.timer)
-  }
 
   render() {
     const { to, image, title } = this.props
@@ -48,8 +25,8 @@ export default class Card extends React.Component<Props> {
           <Image src={image} alt={title} />
           <Flex
             bg={this.state.preview ? 'overlay' : undefined}
-            onPointerEnter={this.onEnter}
-            onPointerLeave={this.onLeave}
+            onMouseEnter={() => this.setState({ preview: true })}
+            onMouseLeave={() => this.setState({ preview: false })}
             justifyContent="center"
             alignItems="center"
             css={`
